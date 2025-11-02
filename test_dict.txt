@@ -1,0 +1,36 @@
+# ============================================
+# POJEDNOSTAVLJENI RJEČNIK ZA TESTIRANJE
+# ============================================
+
+# Osnovni ispunjivači
+well -> pa
+so -> dakle
+hey -> hej
+oh -> o
+look -> gledaj
+listen -> slušaj
+alright -> u redu
+okay -> u redu
+yes -> da
+no -> ne
+
+# Diskursni markeri
+actually -> zapravo
+basically -> uglavnom
+anyway -> uostalom
+
+# Uzrečice i česti izrazi
+oh my god -> o moj bože
+come on -> hajde
+you know -> znaš
+I mean -> mislim
+
+# Vremenski izrazi
+now -> sad
+then -> onda
+after that -> nakon toga
+
+# Emocije
+wow -> jao
+oh no -> o ne
+great -> odlično

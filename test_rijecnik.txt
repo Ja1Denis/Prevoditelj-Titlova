@@ -1,0 +1,17 @@
+# Testni rječnik - samo osnovna pravila
+# Format: regex -> prijevod
+
+# Pravila s visokim prioritetom
+^Yes\.\s*$ -> Da.
+^Well\.\.\.\s*$ -> Pa...
+^Yes,\s+I\s+know\s*$ -> Da, znam.
+^Well,\s+I\s+think\.\.\.\s*$ -> Pa, mislim...
+
+# Općenitija pravila (niži prioritet)
+^[yY]es\b -> Da
+^[wW]ell,\s*-> Pa,
+^[wW]ell\b -> Pa
+
+# Onemogući sve ostale prijevode za ove riječi
+^[yY]es[\s\.\!\?]*$ -> Da.
+^[wW]ell[\s\.\!\?]*$ -> Pa...

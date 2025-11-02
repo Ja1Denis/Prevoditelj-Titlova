@@ -1,0 +1,247 @@
+# ============================================
+# DISKURSNI MARKERI - KONTEKSTUALNI PRIJEVODI
+# ============================================
+# Format: izraz [u kontekstu:tip] -> prijevod
+#       ili: izraz -> prijevod
+#
+# Posebni znakovi:
+# $1, $2, ... - referenciraju grupe iz regexa
+# \b - granica riječi
+# ^ - početak teksta
+# $ - kraj teksta
+
+# ===== POTVRDE I ODBIJANJA =====
+# Specifični slučajevi (visok prioritet)
+^Yes\.\s*$ -> Da.
+^Well\.\.\.\s*$ -> Pa...
+
+# Pravila za 'Yes' i 'No'
+^yes\b -> da
+^Yes\b -> da
+^Yes\.\s*$ -> Da.
+^Yes\.\b -> Da
+^Yes.\b -> da
+
+# Specifični slučajevi iz testa
+^Yes\.\s*$ -> Da.
+^Well\.\.\.\s*$ -> Pa...
+
+^yes,?\s*$ -> da
+^yes,?\s+(.*) -> da, $1
+^yes\?\s*$ -> da?
+^yes!\.*$ -> da!
+
+^Yes, I know$ -> Da, znam
+^Yes\?$ -> Da?
+^Yes!$ -> Da!
+^No way!$ -> Nema šanse!
+^Well\.\.\.$ -> Pa...
+^Well, I think\.\.\.$ -> Pa, mislim...
+
+^no\b -> ne
+^no,?\s*$ -> ne
+^no,?\s+(.*) -> ne, $1
+^no\?\s*$ -> ne?
+^no!\.*$ -> ne!
+
+# ===== OSNOVNI ISPUNJAVAČI =====
+# Pravila za 'well' s točkama
+^well\.\.\.\s*$ -> Pa...
+^well\.\.\.\s+(.*) -> Pa... $1
+
+# Pravila za 'well' s upitnikom
+^well\?\s*$ -> Pa?
+^well\?\s+(.*) -> Pa? $1
+
+# Pravila za 'well' s uskličnikom
+^well!\s*$ -> Pa!
+^well!\s+(.*) -> Pa! $1
+
+# Pravila za 'well' s točkom
+^well\.\s*$ -> Pa.
+^well\.\s+(.*) -> Pa. $1
+
+# Pravila za 'well' na početku rečenice
+^well\b -> pa
+^well,\s*$ -> pa,
+^well,\s+(.*) -> pa, $1
+^Well\.\.\.$ -> Pa...
+^Well.\.\.$ -> Pa...
+
+
+# Pravila za 'well then'
+^well then\b -> e pa
+^well then,?\s+(.*) -> e pa, $1
+^well,? then\b -> e pa
+^well,? then,?\s+(.*) -> e pa, $1
+
+# Kontekstualna pravila za 'well'
+(\?|!|\.\.\.)\s+[Ww]ell\b -> $1 Pa
+(\?|!|\.\.\.)\s+[Ww]ell,?\s+(.*) -> $1 Pa, $2
+
+# Well u sredini rečenice
+\bwell\b -> pa
+\bwell,?\s+(.*?[.!?])\s*$ -> pa, $1
+
+^so\b -> dakle
+^so,?\s+(.*) -> dakle, $1
+^so\?\s*$ -> Dakle?
+
+^there you go\b -> eto
+^there you go,?\s+(.*) -> eto, $1
+
+^meaning\b -> znači
+^meaning,?\s+(.*) -> znači, $1
+
+^oh\s+come\s+on\b -> ma daj
+^oh\s+come\s+on,?\s+(.*) -> ma daj, $1
+
+^hey\b -> hej
+^hey,?\s+(.*) -> hej, $1
+
+^oh\b -> o
+^oh,?\s+(.*) -> o, $1
+
+^okay\b -> dobro
+^okay,?\s+(.*) -> dobro, $1
+
+alright\b -> u redu
+alright,?\s+(.*) -> u redu, $1
+
+therefore\b -> stoga
+therefore,?\s+(.*) -> stoga, $1
+
+# ===== KONTEKSTUALNA PRAVILA =====
+# Primjeri kontekstualnih pravila - mogu se proširiti
+
+# Well na početku rečenice nakon pitanja
+(\?\s*|\.\s+[A-Z][^.!?]*\?\s+)([Ww]ell\b) -> $1Pa
+
+# Well kao odgovor na pitanje
+^(\s*-\s*[^\n]*\?\s*)([Ww]ell\b) -> $1Pa
+
+# Well kao iskaz sumnje
+(\?|but|however|although|though)\s+[Ww]ell\b -> $1 pa
+
+# So na početku objašnjenja
+(explain|tell me|what is|who is|where is|how to)\s+[^.!?]*\?\s+[Ss]o\b -> $1 Dakle
+
+# Oh come on s različitim intonacijama
+^oh\s+come\s+on(\s+[^.!?]*[!?]) -> ma daj$1
+^oh\s+come\s+on(\s+[^.!?]*\.) -> pa daj$1
+
+# Hey s različitim kontekstima
+^hey\s+you\b -> ej ti
+^hey\s+guys\b -> ej ljudi
+^hey\s+there\b -> zdravo
+
+# Oh s različitim kontekstima
+^oh\s+my\s+god\b -> o moj bože
+^oh\s+no\b -> o ne
+^oh\s+yes\b -> o da
+^oh\s+really\b -> zbilja?
+
+# ===== ZVUČNI ISPUNJAVAČI =====
+mmm -> mmm
+hmm -> hmm
+uh [u kontekstu:oklijevanje] -> eee
+er -> eee
+uhh -> aaaa
+aaah -> aaaa
+um -> um
+uhm -> uhm
+eh [u kontekstu:nerazumijevanje] -> šta
+
+# ===== REGULATORI DISKURSA =====
+look [u kontekstu:objašnjenje] -> vidi
+look [u kontekstu:upozorenje] -> pazi
+listen [u kontekstu:ozbiljno] -> slušaj
+listen [u kontekstu:prijateljski] -> čuj
+see [u kontekstu:shvaćanje] -> vidi
+here [u kontekstu:davanje] -> evo
+here you go -> izvoli
+there [u kontekstu:pokazivanje] -> eto
+come on [u kontekstu:ohrabrenje] -> hajde
+let's go -> idemo
+wait [u kontekstu:čekanje] -> čekaj
+hold on [u kontekstu:čekanje] -> stani
+stop [u kontekstu:zaustavljanje] -> stani
+
+# ===== KOLOKVIJALNI IZRAZI =====
+like [u kontekstu:usporedba] -> kao
+sort of [u kontekstu:prilagodba] -> nekako
+that thing [u kontekstu:sjećanje] -> ono
+right? [u kontekstu:potvrda] -> jelda
+isn't it? [u kontekstu:suglasnost] -> zar ne
+what [u kontekstu:nerazumijevanje] -> šta
+but [u kontekstu:suprotnost] -> nego
+well [u kontekstu:zastranjenje] -> dobro
+huh [u kontekstu:nerazumijevanje] -> ha
+damn it [u kontekstu:frustracija] -> kvragu
+tough luck [u kontekstu:suosjećanje] -> jebi ga
+you know? [u kontekstu:provjera] -> znaš
+you get it? [u kontekstu:provjera] -> kužiš
+you understand? [u kontekstu:objašnjenje] -> razumiješ
+
+# ===== UVODNE I ZAVRŠNE FRAZE =====
+namely [u kontekstu:pojašnjenje] -> naime
+in fact [u kontekstu:pojašnjenje] -> zapravo
+however [u kontekstu:suprotnost] -> međutim
+otherwise [u kontekstu:alternativa] -> inače
+by the way [u kontekstu:dodatak] -> usput
+after all [u kontekstu:zaključak] -> naposljetku
+anyway [u kontekstu:prekid] -> uglavnom
+basically [u kontekstu:pojednostavljenje] -> u biti
+mostly [u kontekstu:općenito] -> uglavnom
+in short [u kontekstu:sažetak] -> ukratko
+briefly [u kontekstu:sažimanje] -> ukratko
+let's say [u kontekstu:primjer] -> recimo
+for example -> primjerice
+for instance -> primjerice
+also [u kontekstu:dodatak] -> također
+as well [u kontekstu:dodatak] -> također
+besides [u kontekstu:dodatak] -> osim toga
+moreover [u kontekstu:nastavak] -> štoviše
+
+# ===== VREMENSKI ORGANIZATORI =====
+then [u kontekstu:slijed] -> zatim
+after that -> nakon toga
+afterwards -> potom
+now [u kontekstu:sadašnjost] -> sada
+currently [u kontekstu:trenutno] -> trenutačno
+at the moment [u kontekstu:sadašnjost] -> trenutno
+immediately [u kontekstu:hitno] -> odmah
+right away [u kontekstu:brzo] -> odmah
+first [u kontekstu:redoslijed] -> prvo
+firstly [u kontekstu:nabrajanje] -> prvo
+second [u kontekstu:redoslijed] -> drugo
+secondly [u kontekstu:nabrajanje] -> drugo
+finally [u kontekstu:završetak] -> konačno
+at the end [u kontekstu:zaključak] -> na kraju
+
+# ===== KOREKTIVNI I POJAŠNJAVAJUĆI =====
+that is [u kontekstu:objašnjenje] -> to jest
+i.e. [u kontekstu:pojašnjenje] -> to jest
+in other words [u kontekstu:pojednostavljenje] -> drugim riječima
+or rather [u kontekstu:ispravak] -> točnije
+more precisely [u kontekstu:preciziranje] -> točnije
+to be exact [u kontekstu:preciznost] -> točnije
+better said [u kontekstu:ispravak] -> bolje rečeno
+rather [u kontekstu:ispravak] -> odnosno
+actually [u kontekstu:ispravak] -> zapravo
+essentially [u kontekstu:suština] -> u biti
+practically [u kontekstu:gotovo] -> praktički
+
+# ===== EMOTIVNI IZRAZI =====
+by God [u kontekstu:zaklinjanje] -> bogami
+indeed [u kontekstu:suglasnost] -> doista
+for sure [u kontekstu:potvrda] -> svakako
+of course [u kontekstu:očigledno] -> naravno
+naturally [u kontekstu:očekivano] -> naravno
+certainly [u kontekstu:sigurnost] -> sigurno
+definitely [u kontekstu:potvrda] -> definitivno
+surely [u kontekstu:vjerojatnost] -> zacijelo
+probably [u kontekstu:pretpostavka] -> vjerojatno
+I suppose [u kontekstu:nesigurnost] -> pretpostavljam
+maybe [u kontekstu:mogućnost] -> možda
+perhaps [u kontekstu:nagadanje] -> možda

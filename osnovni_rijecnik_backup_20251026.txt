@@ -1,0 +1,127 @@
+# ============================================
+# DISKURSNI MARKERI - KONTEKSTUALNI PRIJEVODI
+# ============================================
+
+# ===== OSNOVNI ISPUNJAVAČI =====
+well [u kontekstu:uvod] -> pa
+well [u kontekstu:razmišljanje] -> pa
+so [u kontekstu:objašnjenje] -> dakle
+so [u kontekstu:slijed] -> pa
+there you go -> eto
+meaning [u kontekstu:objašnjenje] -> znači
+oh come on [u kontekstu:nezadovoljstvo] -> ma daj
+hey [u kontekstu:pozdrav] -> hej
+hey [u kontekstu:pažnja] -> ej
+oh [u kontekstu:iznenađenje] -> o
+well then -> e pa
+okay [u kontekstu:suglasnost] -> dobro
+alright [u kontekstu:prihvaćanje] -> u redu
+thus [u kontekstu:zaključak] -> dakle
+therefore [u kontekstu:zaključak] -> stoga
+so then [u kontekstu:nastavak] -> dakle
+then [u kontekstu:vrijeme] -> onda
+
+# ===== ZVUČNI ISPUNJAVAČI =====
+mmm -> mmm
+hmm -> hmm
+uh [u kontekstu:oklijevanje] -> eee
+er -> eee
+uhh -> aaaa
+aaah -> aaaa
+um -> um
+uhm -> uhm
+eh [u kontekstu:nerazumijevanje] -> šta
+
+# ===== REGULATORI DISKURSA =====
+look [u kontekstu:objašnjenje] -> vidi
+look [u kontekstu:upozorenje] -> pazi
+listen [u kontekstu:ozbiljno] -> slušaj
+listen [u kontekstu:prijateljski] -> čuj
+see [u kontekstu:shvaćanje] -> vidi
+here [u kontekstu:davanje] -> evo
+here you go -> izvoli
+there [u kontekstu:pokazivanje] -> eto
+come on [u kontekstu:ohrabrenje] -> hajde
+let's go -> idemo
+wait [u kontekstu:čekanje] -> čekaj
+hold on [u kontekstu:čekanje] -> stani
+stop [u kontekstu:zaustavljanje] -> stani
+
+# ===== KOLOKVIJALNI IZRAZI =====
+like [u kontekstu:usporedba] -> kao
+sort of [u kontekstu:prilagodba] -> nekako
+that thing [u kontekstu:sjećanje] -> ono
+right? [u kontekstu:potvrda] -> jelda
+isn't it? [u kontekstu:suglasnost] -> zar ne
+what [u kontekstu:nerazumijevanje] -> šta
+but [u kontekstu:suprotnost] -> nego
+well [u kontekstu:zastranjenje] -> dobro
+huh [u kontekstu:nerazumijevanje] -> ha
+damn it [u kontekstu:frustracija] -> kvragu
+tough luck [u kontekstu:suosjećanje] -> jebi ga
+you know? [u kontekstu:provjera] -> znaš
+you get it? [u kontekstu:provjera] -> kužiš
+you understand? [u kontekstu:objašnjenje] -> razumiješ
+
+# ===== UVODNE I ZAVRŠNE FRAZE =====
+namely [u kontekstu:pojašnjenje] -> naime
+in fact [u kontekstu:pojašnjenje] -> zapravo
+however [u kontekstu:suprotnost] -> međutim
+otherwise [u kontekstu:alternativa] -> inače
+by the way [u kontekstu:dodatak] -> usput
+after all [u kontekstu:zaključak] -> naposljetku
+anyway [u kontekstu:prekid] -> uglavnom
+basically [u kontekstu:pojednostavljenje] -> u biti
+mostly [u kontekstu:općenito] -> uglavnom
+in short [u kontekstu:sažetak] -> ukratko
+briefly [u kontekstu:sažimanje] -> ukratko
+let's say [u kontekstu:primjer] -> recimo
+for example -> primjerice
+for instance -> primjerice
+also [u kontekstu:dodatak] -> također
+as well [u kontekstu:dodatak] -> također
+besides [u kontekstu:dodatak] -> osim toga
+moreover [u kontekstu:nastavak] -> štoviše
+
+# ===== VREMENSKI ORGANIZATORI =====
+then [u kontekstu:slijed] -> zatim
+after that -> nakon toga
+afterwards -> potom
+now [u kontekstu:sadašnjost] -> sada
+currently [u kontekstu:trenutno] -> trenutačno
+at the moment [u kontekstu:sadašnjost] -> trenutno
+immediately [u kontekstu:hitno] -> odmah
+right away [u kontekstu:brzo] -> odmah
+first [u kontekstu:redoslijed] -> prvo
+firstly [u kontekstu:nabrajanje] -> prvo
+second [u kontekstu:redoslijed] -> drugo
+secondly [u kontekstu:nabrajanje] -> drugo
+finally [u kontekstu:završetak] -> konačno
+at the end [u kontekstu:zaključak] -> na kraju
+
+# ===== KOREKTIVNI I POJAŠNJAVAJUĆI =====
+that is [u kontekstu:objašnjenje] -> to jest
+i.e. [u kontekstu:pojašnjenje] -> to jest
+in other words [u kontekstu:pojednostavljenje] -> drugim riječima
+or rather [u kontekstu:ispravak] -> točnije
+more precisely [u kontekstu:preciziranje] -> točnije
+to be exact [u kontekstu:preciznost] -> točnije
+better said [u kontekstu:ispravak] -> bolje rečeno
+rather [u kontekstu:ispravak] -> odnosno
+actually [u kontekstu:ispravak] -> zapravo
+essentially [u kontekstu:suština] -> u biti
+practically [u kontekstu:gotovo] -> praktički
+
+# ===== EMOTIVNI IZRAZI =====
+by God [u kontekstu:zaklinjanje] -> bogami
+indeed [u kontekstu:suglasnost] -> doista
+for sure [u kontekstu:potvrda] -> svakako
+of course [u kontekstu:očigledno] -> naravno
+naturally [u kontekstu:očekivano] -> naravno
+certainly [u kontekstu:sigurnost] -> sigurno
+definitely [u kontekstu:potvrda] -> definitivno
+surely [u kontekstu:vjerojatnost] -> zacijelo
+probably [u kontekstu:pretpostavka] -> vjerojatno
+I suppose [u kontekstu:nesigurnost] -> pretpostavljam
+maybe [u kontekstu:mogućnost] -> možda
+perhaps [u kontekstu:nagadanje] -> možda

@@ -1,0 +1,60 @@
+# ============================================
+# POBOLJŠANI RJEČNIK - VERZIJA 2
+# ============================================
+
+# Osnovni ispunjavi
+^well$ -> pa
+^well, -> pa,
+^well\. -> pa.
+^well\? -> pa?
+^well! -> pa!
+^so$ -> dakle
+^so, -> dakle,
+^so\. -> dakle.
+^so\? -> dakle?
+^so! -> dakle!
+
+# Pozdravi i uzvici
+^hey$ -> hej
+^hey, -> hej,
+^oh$ -> o
+^oh, -> o,
+^oh! -> o!
+^oh my god$ -> o moj bože
+^oh my god! -> o moj bože!
+^come on$ -> hajde
+^come on! -> hajde!
+^come on, -> hajde,
+
+# Česti izrazi
+^look$ -> gledaj
+^look, -> gledaj,
+^look! -> gledaj!
+^listen$ -> slušaj
+^listen, -> slušaj,
+^listen! -> slušaj!
+
+alright -> u redu
+okay -> u redu
+yes -> da
+no -> ne
+
+# Diskursni markeri
+actually -> zapravo
+basically -> uglavnom
+anyway -> uostalom
+I mean -> mislim
+you know -> znaš
+
+# Vremenski izrazi
+^now$ -> sad
+^now, -> sad,
+then -> onda
+after that -> nakon toga
+
+# Emocije
+^wow$ -> jao
+^wow! -> jao!
+^oh no$ -> o ne
+^oh no! -> o ne!
+great -> odlično

@@ -1,0 +1,3327 @@
+1
+00:00:07,800 --> 00:00:10,007
+(Pucnjava)
+
+2
+00:00:14,080 --> 00:00:16,367
+(ZRAKA KASTAMERE SVIRA)
+
+3
+00:00:16,440 --> 00:00:18,920
+(Stopama pristupa)
+
+4
+00:03:48,640 --> 00:03:50,051
+Veličanstveno.
+
+5
+00:03:50,920 --> 00:03:52,729
+Izgleda svježe falsificiran.
+
+6
+00:03:52,800 --> 00:03:53,801
+Jeste.
+
+7
+00:03:55,400 --> 00:03:59,041
+Nitko nije napravio Valyrianski čelični mač još od Doom of Valyria.
+
+8
+00:03:59,120 --> 00:04:02,761
+Postoje tri živa kovača koji znaju preraditi valyrijski čelik.
+
+9
+00:04:02,840 --> 00:04:05,366
+Najbolji od njih je bio u Volantisu.
+
+10
+00:04:05,920 --> 00:04:08,321
+Došao sam u Kraljevu Luku na moj poziv.
+
+11
+00:04:08,800 --> 00:04:10,529
+Odakle ti ovoliko Valyrian čelika?
+
+12
+00:04:10,760 --> 00:04:13,081
+Od nekoga kome to više nije bilo potrebno.
+
+13
+00:04:16,360 --> 00:04:18,647
+Već dugo ga želiš u obitelji.
+
+14
+00:04:18,720 --> 00:04:20,643
+A sada imamo dva.
+
+15
+00:04:20,720 --> 00:04:25,044
+Originalno oružje je bilo apsurdno veliko, puno čelika za dva mača.
+
+16
+00:04:25,560 --> 00:04:27,847
+Hvala, veličanstveno je.
+
+17
+00:04:32,040 --> 00:04:33,041
+(Marinci)
+
+18
+00:04:34,680 --> 00:04:36,364
+Morat ćeš trenirati lijevu ruku.
+
+19
+00:04:36,600 --> 00:04:39,080
+Svaki pristojan mačevalac zna koristiti obje ruke.
+
+20
+00:04:39,160 --> 00:04:41,367
+Nikad nećeš biti tako dobar.
+
+21
+00:04:41,440 --> 00:04:42,680
+Ne. Ne.
+
+22
+00:04:42,800 --> 00:04:45,326
+Ali sve dok sam bolji od svih ostalih, nije važno.
+
+23
+00:04:46,840 --> 00:04:49,446
+Ne možeš služiti u Kraljevoj gardi s jednom rukom.
+
+24
+00:04:49,520 --> 00:04:53,127
+Mogu i hoću, zakletva Kraljeve garde je doživotna.
+
+25
+00:04:53,200 --> 00:04:55,168
+Rat je gotov, kralj je na sigurnom.
+
+26
+00:04:55,240 --> 00:04:57,004
+Kralj nikada nije siguran.
+
+27
+00:04:57,080 --> 00:04:59,651
+Koliko bi samo ljudi u ovom gradu voljelo vidjeti njegovu glavu na štuci?
+
+28
+00:04:59,880 --> 00:05:02,042
+Drugi vitezovi su štitili kralja dok si bio zatvorenik.
+
+29
+00:05:02,120 --> 00:05:05,044
+Nastavit će to raditi kad se vratiš kući.
+
+30
+00:05:05,480 --> 00:05:06,481
+Kući?
+
+31
+00:05:06,640 --> 00:05:10,440
+Vratit ćeš se u Livačku stijenu i vladati umjesto mene.
+
+32
+00:05:10,720 --> 00:05:12,722
+Ti si Gospodar Bacačke stijene.
+
+33
+00:05:14,880 --> 00:05:17,611
+Ja sam Kraljeva Ruka, moje mjesto je ovdje.
+
+34
+00:05:17,960 --> 00:05:21,169
+Ne očekujem da ću opet vidjeti Stijenu prije nego umrem.
+
+35
+00:05:22,080 --> 00:05:24,321
+Znaš kako me zovu?
+
+36
+00:05:24,400 --> 00:05:27,290
+Kralj-ubojica, zakletva, čovjek bez časti.
+
+37
+00:05:28,000 --> 00:05:31,004
+Sada želiš da prekršim još jedan sveti zavjet.
+
+38
+00:05:31,080 --> 00:05:32,889
+Nećeš ništa slomiti.
+
+39
+00:05:32,960 --> 00:05:36,089
+Postoji presedan za oslobađanje kraljeve garde od njegovih dužnosti.
+
+40
+00:05:36,160 --> 00:05:38,925
+Kralj će iskoristiti to pravo.
+
+41
+00:05:39,040 --> 00:05:40,087
+Ne. Ne.
+
+42
+00:05:40,720 --> 00:05:41,721
+Ne? -Ne.
+
+43
+00:05:42,440 --> 00:05:43,487
+Ne. Ne.
+
+44
+00:05:45,440 --> 00:05:47,761
+Ne vjerujem da sam ti postavio pitanje.
+
+45
+00:05:48,320 --> 00:05:49,810
+Ako misliš da tvoja prokleta čast dolazi prije tvoje...
+
+46
+00:05:49,880 --> 00:05:53,362
+Moja krvava čast je nepopravljiva, ali moj odgovor je i dalje ne.
+
+47
+00:05:53,440 --> 00:05:55,886
+Ne želim Livačku stijenu, ženu, djecu.
+
+48
+00:05:56,160 --> 00:05:57,161
+Što želiš?
+
+49
+00:05:59,600 --> 00:06:01,011
+Večera bi bila dobra.
+
+50
+00:06:02,880 --> 00:06:05,645
+40 godina pokušavam da te naučim.
+
+51
+00:06:05,760 --> 00:06:07,728
+Ako niste naučili do sada, nikada nećete.
+
+52
+00:06:09,080 --> 00:06:10,127
+Idi.
+
+53
+00:06:10,200 --> 00:06:14,728
+Ako je služenje kao proslavljeni tjelohranitelj zbroj vaše ambicije, idite služiti.
+
+54
+00:06:15,960 --> 00:06:17,325
+Pretpostavljam da želiš mač natrag.
+
+55
+00:06:17,560 --> 00:06:18,641
+Zadrži ga.
+
+56
+00:06:19,640 --> 00:06:23,486
+Jednoruki čovjek bez obitelji treba svu pomoć koju može dobiti.
+
+57
+00:06:32,560 --> 00:06:34,289
+(Nejasna razgovora)
+
+58
+00:06:46,080 --> 00:06:48,162
+(Goats bleating)
+
+59
+00:06:51,160 --> 00:06:53,288
+Koliko Dornišana je potrebno da pojebu kozu?
+
+60
+00:06:53,480 --> 00:06:54,481
+Molim te, nemoj.
+
+61
+00:06:56,640 --> 00:07:00,645
+Čini mi se da je pametno mjesto za upoznavanje putnika u krčmi.
+
+62
+00:07:00,720 --> 00:07:04,930
+Na taj način, jedna stranka kasni, druga stranka može popiti neko pivo unutra.
+
+63
+00:07:05,000 --> 00:07:09,130
+Ovo je princ Dornea kojeg čekamo, a ne jedan od tvojih prijatelja.
+
+64
+00:07:09,240 --> 00:07:13,211
+Ako je tako prokleto važan, kako to da su te poslali da ga upoznaš?
+
+65
+00:07:14,880 --> 00:07:18,726
+Ima zle krvi između Martellsa Dornea i Lannistera Livačke stijene.
+
+66
+00:07:18,800 --> 00:07:20,245
+Već godinama.
+
+67
+00:07:20,320 --> 00:07:24,370
+I samo u slučaju Martells od Dorne su u potrazi proliti neke Lannister krvi,
+
+68
+00:07:24,440 --> 00:07:26,363
+Nema potrebe za cinizmom.
+
+69
+00:07:26,440 --> 00:07:28,283
+Ja sam uspješan diplomata.
+
+70
+00:07:28,360 --> 00:07:29,361
+Oh.
+
+71
+00:07:30,000 --> 00:07:32,526
+Ah, evo nas.
+
+72
+00:07:32,680 --> 00:07:33,920
+(Clapping)
+
+73
+00:07:35,800 --> 00:07:37,040
+Možeš li pročitati sigile?
+
+74
+00:07:39,600 --> 00:07:40,647
+Žuta jaja?
+
+75
+00:07:40,720 --> 00:07:43,724
+Divlji limun na ljubičastom polju, kuća Dalt od Lemonwooda.
+
+76
+00:07:45,400 --> 00:07:49,041
+Lešinar koji hvata bebu u svojim kandžama, kuća Blackmonta.
+
+77
+00:07:49,520 --> 00:07:52,046
+Krunirana lubanja, Manwoodys of Kingsgrave.
+
+78
+00:07:52,120 --> 00:07:53,804
+Dečko zna svoje Dornske kuće.
+
+79
+00:07:53,880 --> 00:07:55,041
+Trebam sigil.
+
+80
+00:07:55,160 --> 00:07:58,243
+A kuća Martell, crveno sunce probušeno kopljem?
+
+81
+00:07:59,240 --> 00:08:00,287
+Ne vidim ga, gospodaru.
+
+82
+00:08:04,520 --> 00:08:07,888
+Njegova milost Kralj Joffrey vas pozdravlja u njegovo ime.
+
+83
+00:08:08,240 --> 00:08:11,289
+Moj gospodar otac, Kraljeva Ruka, šalje pozdrave kao dobro.
+
+84
+00:08:11,400 --> 00:08:14,882
+Ja sam Tirion Lannister iz Livačke stijene, Gospodar Novčića.
+
+85
+00:08:18,760 --> 00:08:20,410
+Oprosti mi.
+
+86
+00:08:20,520 --> 00:08:22,522
+Ne vidim princa Dorana u vašem društvu.
+
+87
+00:08:22,760 --> 00:08:26,446
+Prinčevo ga zdravlje prisiljava da ostane na Sunspearu.
+
+88
+00:08:27,240 --> 00:08:31,882
+Šalje svog brata, princa Oberyna, da prisustvuje kraljevskom vjenčanju.
+
+89
+00:08:34,720 --> 00:08:38,327
+Kralj će biti oduševljen da uživa u društvu ratnika.
+
+90
+00:08:38,400 --> 00:08:41,609
+Poznat kao Princ Oberyn.
+
+91
+00:08:41,760 --> 00:08:42,886
+Hoće li?
+
+92
+00:08:44,400 --> 00:08:45,765
+Gdje je princ Oberyn?
+
+93
+00:08:46,080 --> 00:08:47,286
+Stigao je prije zore.
+
+94
+00:08:48,080 --> 00:08:50,924
+Nije čovjek za zabave dobrodošlice.
+
+95
+00:08:51,800 --> 00:08:55,771
+Dobro, gospodo, ovi fini ljudi iz Gradske straže...
+
+96
+00:08:55,840 --> 00:08:58,320
+Otpratit ću vas u vaše odaje u Crvenu utvrdu.
+
+97
+00:08:58,600 --> 00:09:01,490
+Mora da ste umorni nakon tako dugog putovanja.
+
+98
+00:09:06,320 --> 00:09:09,130
+Neka uspješna diplomacija koja je bila.
+
+99
+00:09:09,200 --> 00:09:10,201
+Gdje sada?
+
+100
+00:09:10,320 --> 00:09:14,370
+Moramo naći princa Oberyna prije nego ubije nekoga, ili nekoliko ljudi.
+
+101
+00:09:14,440 --> 00:09:17,284
+Kako planiraš pronaći jednog Dornishmana u ovako velikom gradu?
+
+102
+00:09:17,360 --> 00:09:19,408
+Poznat si po jebenoj polovici Westerosa.
+
+103
+00:09:19,480 --> 00:09:22,404
+Upravo si stigao u glavni grad nakon dva tjedna lošeg puta.
+
+104
+00:09:22,480 --> 00:09:23,720
+Gdje bi ti otišao?
+
+105
+00:09:23,800 --> 00:09:26,929
+Vjerojatno bih zaspao, ali starim.
+
+106
+00:09:51,560 --> 00:09:53,164
+Pogledaj ovu.
+
+107
+00:09:55,160 --> 00:09:56,889
+Kako je ljupka?
+
+108
+00:09:56,960 --> 00:09:58,325
+Prekrasno.
+
+109
+00:09:59,080 --> 00:10:00,411
+Ali blijeda.
+
+110
+00:10:00,720 --> 00:10:04,850
+Volimo ih blijede u glavnom gradu, pokazuju da ne rade na poljima.
+
+111
+00:10:07,520 --> 00:10:08,567
+Da li te plašim?
+
+112
+00:10:11,600 --> 00:10:12,886
+Sviđa ti se?
+
+113
+00:10:13,160 --> 00:10:15,811
+Dosadno mi je.
+
+114
+00:10:16,600 --> 00:10:17,601
+Hmm.
+
+115
+00:10:22,160 --> 00:10:24,561
+Ti si pomalo nestašan, zar ne?
+
+116
+00:10:27,240 --> 00:10:28,765
+Mislim da joj se sviđaš.
+
+117
+00:10:28,840 --> 00:10:29,841
+Ima dobar ukus.
+
+118
+00:10:33,120 --> 00:10:35,168
+Nisi plašljiv, zar ne?
+
+119
+00:10:38,880 --> 00:10:41,486
+(Smijeh) nije plašljiv.
+
+120
+00:10:42,400 --> 00:10:43,970
+Voliš li žene?
+
+121
+00:10:44,080 --> 00:10:45,320
+Kada izgledaju kao ona, gospodaru.
+
+122
+00:10:45,560 --> 00:10:47,688
+Ova će biti dobra.
+
+123
+00:10:48,400 --> 00:10:49,890
+Vrlo dobro, moja gospo.
+
+124
+00:10:50,000 --> 00:10:52,002
+Oh, ja nisam dama.
+
+125
+00:10:52,080 --> 00:10:54,287
+Izraz uljudnosti u ovoj ustanovi.
+
+126
+00:10:54,360 --> 00:10:55,930
+Laž bilo gdje.
+
+127
+00:10:56,800 --> 00:10:58,928
+Zašto ne bi upotrijebio prave riječi?
+
+128
+00:10:59,000 --> 00:11:00,684
+Ja sam gad.
+
+129
+00:11:00,760 --> 00:11:03,445
+Ona je kurva, a ti si što?
+
+130
+00:11:04,520 --> 00:11:05,931
+Nabavljač.
+
+131
+00:11:06,640 --> 00:11:07,641
+Bilo tko od ostalih?
+
+132
+00:11:09,800 --> 00:11:12,121
+Dvije djevojke mogu otići.
+
+133
+00:11:12,280 --> 00:11:14,089
+Ostani.
+
+134
+00:11:15,400 --> 00:11:17,004
+Bojim se da nisam na ponudi, gospodaru.
+
+135
+00:11:17,080 --> 00:11:18,844
+Svatko tko radi za Littlefinger je na ponudi.
+
+136
+00:11:20,840 --> 00:11:23,207
+Skini se, bit ćemo ovdje neko vrijeme.
+
+137
+00:11:23,280 --> 00:11:25,726
+- Ja sam princ, dečko.
+
+138
+00:11:25,960 --> 00:11:27,041
+(ŽENA jauk)
+
+139
+00:11:27,720 --> 00:11:28,767
+Jesi li ikad bila s princem?
+
+140
+00:11:30,880 --> 00:11:32,041
+Ne mogu reći da jesam.
+
+141
+00:11:35,920 --> 00:11:38,287
+- Ja sam divlje skupo. - (Scoffs)
+
+142
+00:11:40,280 --> 00:11:41,520
+Skini se.
+
+143
+00:11:49,200 --> 00:11:51,202
+Kako ti se sviđa?
+
+144
+00:11:52,360 --> 00:11:54,966
+Moj način.
+
+145
+00:11:55,800 --> 00:12:00,010
+I tako je govorio, i tako je govorio
+
+146
+00:12:00,080 --> 00:12:03,687
+Taj gospodar Castamerea
+
+147
+00:12:04,600 --> 00:12:05,601
+Ali sada kiše...
+
+148
+00:12:05,680 --> 00:12:06,727
+Oberyne.
+
+149
+00:12:06,800 --> 00:12:07,847
+Plači u njegovom hodniku...
+
+150
+00:12:08,160 --> 00:12:09,366
+Oberyne, nemoj.
+
+151
+00:12:09,600 --> 00:12:12,524
+Bez ikoga da čuje.
+
+152
+00:12:13,360 --> 00:12:17,968
+Da, sada kiše plaču nad njegovom dvoranom.
+
+153
+00:12:18,400 --> 00:12:24,089
+I nikoga da čuje.
+
+154
+00:12:32,320 --> 00:12:33,321
+Izgubio si se, prijatelju?
+
+155
+00:12:34,080 --> 00:12:36,003
+Oprostite što buljim.
+
+156
+00:12:37,160 --> 00:12:39,003
+Ne vidim mnogo Lannistera tamo odakle sam.
+
+157
+00:12:40,320 --> 00:12:41,924
+Ne vidim mnogo Dornišana u glavnom gradu.
+
+158
+00:12:42,000 --> 00:12:43,525
+Ne sviđa nam se miris.
+
+159
+00:12:43,880 --> 00:12:45,405
+(Smijeh)
+
+160
+00:12:45,480 --> 00:12:48,051
+Pođi sa mnom, ljubavniče.
+
+161
+00:12:48,160 --> 00:12:50,322
+Gospodo, ako me pratite, sredit ću vam privatnu sobu.
+
+162
+00:12:50,400 --> 00:12:52,687
+Zašto tratiš ženu kao što je ova na Dornishman?
+
+163
+00:12:52,840 --> 00:12:56,083
+Donesite mu obrijanu kozu i bocu maslinovog ulja.
+
+164
+00:12:56,560 --> 00:12:57,766
+(Smijeh)
+
+165
+00:12:57,880 --> 00:12:58,881
+Hmm.
+
+166
+00:13:00,640 --> 00:13:03,769
+Znaš li zašto cijeli svijet mrzi Lannistera?
+
+167
+00:13:08,880 --> 00:13:09,881
+Misliš da je tvoje zlato
+
+168
+00:13:11,680 --> 00:13:15,685
+i tvoji lavovi i tvoji zlatni lavovi te čine boljim od svih.
+
+169
+00:13:18,400 --> 00:13:19,401
+Mogu li ti odati tajnu?
+
+170
+00:13:20,880 --> 00:13:22,882
+Ti nisi zlatni lav.
+
+171
+00:13:24,280 --> 00:13:27,887
+Ti si samo ružičasti mali čovjek koji je prespor u izvlačenju.
+
+172
+00:13:34,240 --> 00:13:35,605
+(Vrišti)
+
+173
+00:13:37,480 --> 00:13:40,165
+Longsword je loša opcija u neposrednoj blizini.
+
+174
+00:13:40,840 --> 00:13:42,649
+Kad povučem oštricu, tvoj prijatelj počne krvariti.
+
+175
+00:13:42,720 --> 00:13:45,166
+Toliko vena u zglobu.
+
+176
+00:13:45,240 --> 00:13:46,844
+(Stenje)
+
+177
+00:13:47,040 --> 00:13:49,964
+Preživjet će ako mu odmah dovedeš pomoć.
+
+178
+00:13:51,120 --> 00:13:53,771
+Dakle, odluke.
+
+179
+00:13:54,240 --> 00:13:55,924
+(Nastavlja stenjanje)
+
+180
+00:13:56,480 --> 00:13:58,721
+Prinče Oberyne, oprostite na smetnji.
+
+181
+00:13:58,840 --> 00:14:00,251
+(MAN vrišti)
+
+182
+00:14:00,400 --> 00:14:01,765
+...nevolje.
+
+183
+00:14:03,480 --> 00:14:05,084
+Ispričavam se, ljubavi.
+
+184
+00:14:08,000 --> 00:14:09,081
+(Vrata zatvara)
+
+185
+00:14:11,120 --> 00:14:13,805
+Ovdje sam da vam poželim dobrodošlicu u glavni grad.
+
+186
+00:14:18,120 --> 00:14:20,327
+Ellaria Sand, moja ljubavnice.
+
+187
+00:14:21,880 --> 00:14:23,882
+Kraljev vlastiti ujak Imp.
+
+188
+00:14:23,960 --> 00:14:26,440
+Tyrion, sin Tywina Lannistera.
+
+189
+00:14:26,520 --> 00:14:28,727
+Ako postoji nešto što mogu učiniti da vaš boravak u Kraljevoj Luci...
+
+190
+00:14:28,800 --> 00:14:30,290
+Što si ti, njegov plaćeni ubojica?
+
+191
+00:14:30,800 --> 00:14:33,610
+Počelo je tako, sada sam vitez.
+
+192
+00:14:33,680 --> 00:14:35,011
+Kako se to dogodilo?
+
+193
+00:14:35,960 --> 00:14:37,121
+Ubio prave ljude.
+
+194
+00:14:38,600 --> 00:14:40,523
+(Oba smijeh)
+
+195
+00:14:41,720 --> 00:14:44,485
+Trebat će nam još nekoliko djevojaka.
+
+196
+00:14:45,360 --> 00:14:46,566
+Ti ne sudjeluješ?
+
+197
+00:14:46,640 --> 00:14:48,290
+Sad sam oženjen.
+
+198
+00:14:49,520 --> 00:14:52,444
+Prinče Oberyne, možemo li razgovarati nasamo?
+
+199
+00:14:57,360 --> 00:14:59,408
+Izgleda da sam greškom posjetio bordel u Lannisteru.
+
+200
+00:14:59,480 --> 00:15:02,006
+Čak i Dornižani.
+
+201
+00:15:02,080 --> 00:15:05,482
+Kralj je vrlo zahvalan što ste prešli toliki put za njegovo vjenčanje.
+
+202
+00:15:05,560 --> 00:15:08,564
+Joffrey je uvrijeđen.
+
+203
+00:15:09,400 --> 00:15:11,721
+Ja sam samo drugi sin.
+
+204
+00:15:11,800 --> 00:15:14,121
+Pa, govoreći kao kolega drugi sin,
+
+205
+00:15:14,200 --> 00:15:17,249
+Navikao sam se na obiteljsku uvredu.
+
+206
+00:15:17,320 --> 00:15:18,606
+(OBERYN smješka)
+
+207
+00:15:18,680 --> 00:15:20,762
+Zašto si došao u Kraljevu Luku?
+
+208
+00:15:20,840 --> 00:15:22,171
+Pozvan sam na kraljevsko vjenčanje.
+
+209
+00:15:22,240 --> 00:15:24,561
+Mislio sam da govorimo istinu.
+
+210
+00:15:26,080 --> 00:15:29,368
+Zadnji put sam bio u glavnom gradu prije mnogo godina.
+
+211
+00:15:29,440 --> 00:15:31,602
+Još jedno vjenčanje.
+
+212
+00:15:31,680 --> 00:15:36,288
+Moja sestra Elia i Rhaegar Targaryen, posljednji zmaj.
+
+213
+00:15:39,480 --> 00:15:42,609
+Moja sestra ga je voljela, rodila mu je djecu.
+
+214
+00:15:43,480 --> 00:15:46,211
+Swaddled ih, ljuljao ih, hranio ih na vlastite grudi.
+
+215
+00:15:46,280 --> 00:15:49,602
+Elia nije dala dojilji da ih dira.
+
+216
+00:15:49,680 --> 00:15:53,651
+I prekrasan, plemeniti Rhaegar Targaryen
+
+217
+00:15:53,720 --> 00:15:55,802
+Ostavio ju je zbog druge žene.
+
+218
+00:15:57,000 --> 00:16:00,083
+To je započelo rat, i rat je završio upravo ovdje,
+
+219
+00:16:01,000 --> 00:16:02,843
+Kada je vojska tvog oca zauzela grad.
+
+220
+00:16:03,360 --> 00:16:04,441
+Nisam zapravo bio prisutan.
+
+221
+00:16:04,520 --> 00:16:06,727
+Iskasapili su tu djecu.
+
+222
+00:16:08,760 --> 00:16:10,285
+Moj nećak i nećakinja.
+
+223
+00:16:10,760 --> 00:16:14,048
+Izrezbario ih i omotao u lannisterske plašteve.
+
+224
+00:16:16,720 --> 00:16:19,644
+A moja sestra, znaš što su joj učinili?
+
+225
+00:16:23,160 --> 00:16:24,241
+Pitam te nešto.
+
+226
+00:16:24,440 --> 00:16:26,124
+Čuo sam glasine.
+
+227
+00:16:27,400 --> 00:16:28,731
+I ja sam.
+
+228
+00:16:29,680 --> 00:16:33,002
+Ono što stalno čujem je da je Gregor Clegane planina
+
+229
+00:16:33,080 --> 00:16:37,324
+Silovao je Eliju i prepolovio je svojim velikim mačem.
+
+230
+00:16:37,520 --> 00:16:39,204
+Nisam bio tamo, ne znam što se dogodilo.
+
+231
+00:16:39,280 --> 00:16:43,080
+Ako je Planina ubila moju sestru, tvoj otac je izdao zapovijed.
+
+232
+00:16:44,360 --> 00:16:46,442
+Reci ocu da sam ovdje.
+
+233
+00:16:48,560 --> 00:16:52,770
+I reci mu da Lannisteri nisu jedini koji plaćaju svoje dugove.
+
+234
+00:17:05,120 --> 00:17:06,770
+(DRAGONS vrištanje)
+
+235
+00:17:08,400 --> 00:17:09,606
+(Reži)
+
+236
+00:17:10,320 --> 00:17:12,402
+(Screeching)
+
+237
+00:17:16,800 --> 00:17:19,929
+- (Reži) - (Smješka)
+
+238
+00:17:20,000 --> 00:17:23,083
+- (Screeches) - (Shushing)
+
+239
+00:17:37,280 --> 00:17:40,045
+(Screeching)
+
+240
+00:17:44,320 --> 00:17:45,890
+(Uzdahe)
+
+241
+00:17:54,760 --> 00:17:56,091
+(SHUSHING)
+
+242
+00:17:56,160 --> 00:17:57,286
+- (Grmi) - (Uzdahe)
+
+243
+00:18:02,280 --> 00:18:04,169
+(Screeches)
+
+244
+00:18:14,560 --> 00:18:17,040
+Oni su zmajevi, Khaleesi.
+
+245
+00:18:17,120 --> 00:18:19,851
+Oni nikada ne mogu biti pripitomljeni.
+
+246
+00:18:19,920 --> 00:18:21,922
+Čak ni od majke.
+
+247
+00:18:43,000 --> 00:18:44,047
+Ser Barristan.
+
+248
+00:18:44,560 --> 00:18:45,925
+Vaša Milosti.
+
+249
+00:18:47,120 --> 00:18:48,406
+Gdje je Daario Naharis?
+
+250
+00:18:49,000 --> 00:18:50,684
+Gdje je Sivi Crv?
+
+251
+00:18:52,280 --> 00:18:54,089
+Kockanje, Vaša Milosti.
+
+252
+00:18:55,960 --> 00:18:57,246
+Kockanje?
+
+253
+00:19:19,760 --> 00:19:21,250
+Mhysa, Mhysa.
+
+254
+00:19:31,600 --> 00:19:33,602
+Koliko dugo su u tome?
+
+255
+00:19:33,680 --> 00:19:35,762
+Od ponoći, Vaša Milosti.
+
+256
+00:19:36,520 --> 00:19:38,363
+Ser Worm je jači nego što izgleda.
+
+257
+00:19:38,600 --> 00:19:40,090
+Ali vidim da mu se ruke počinju tresti.
+
+258
+00:19:40,360 --> 00:19:42,727
+Koja je nagrada za pobjedu na ovom glupom natjecanju?
+
+259
+00:19:42,800 --> 00:19:44,882
+Čast je jahati uz tebe na putu za Meereen.
+
+260
+00:19:45,120 --> 00:19:48,203
+Ta čast pripada Ser Jorahu i Ser Barristanu,
+
+261
+00:19:48,280 --> 00:19:50,726
+Kao što ni jedno od njih nije ostavilo da čekam jutros.
+
+262
+00:19:51,720 --> 00:19:55,202
+Vas dvoje ćete se voziti u stražnjem straži i štititi stoku.
+
+263
+00:19:56,320 --> 00:20:00,325
+Posljednji čovjek koji drži svoj mač može naći novu kraljicu za koju će se boriti.
+
+264
+00:20:00,800 --> 00:20:01,881
+(Daario stenje)
+
+265
+00:20:05,120 --> 00:20:06,281
+(Oba govore valyrian)
+
+266
+00:20:06,760 --> 00:20:07,807
+Sviđa ti se ova djevojka?
+
+267
+00:20:09,440 --> 00:20:10,601
+Mora da je frustrirajuće.
+
+268
+00:20:10,680 --> 00:20:13,365
+Ti nisi pametan čovjek, Daario Naharis.
+
+269
+00:20:13,840 --> 00:20:15,763
+Radije bih bez mozga
+
+270
+00:20:16,480 --> 00:20:18,642
+i dvije lopte.
+
+271
+00:20:29,800 --> 00:20:31,802
+Moraš nešto pojesti.
+
+272
+00:20:35,160 --> 00:20:36,525
+Pita od goluba.
+
+273
+00:20:37,480 --> 00:20:39,005
+Ne, hvala.
+
+274
+00:20:43,040 --> 00:20:44,451
+Kolači od limuna?
+
+275
+00:20:45,560 --> 00:20:46,846
+Ne, hvala.
+
+276
+00:20:46,920 --> 00:20:48,729
+Voliš kolače od limuna.
+
+277
+00:20:50,160 --> 00:20:51,605
+Reci joj da mora jesti.
+
+278
+00:20:51,680 --> 00:20:53,330
+Gospo, morate jesti.
+
+279
+00:20:53,640 --> 00:20:55,051
+Ne želim jesti.
+
+280
+00:20:57,840 --> 00:21:00,002
+Ako bih mogao imati trenutak nasamo sa svojom ženom.
+
+281
+00:21:09,840 --> 00:21:11,490
+Mora jesti.
+
+282
+00:21:18,960 --> 00:21:20,246
+Ne mogu dopustiti da gladuješ.
+
+283
+00:21:21,360 --> 00:21:22,850
+Zakleo sam se da ću te zaštititi.
+
+284
+00:21:29,960 --> 00:21:31,200
+Moja gospo,
+
+285
+00:21:32,200 --> 00:21:34,043
+Ja sam ti muž, daj da ti pomognem.
+
+286
+00:21:36,440 --> 00:21:38,283
+Kako mi možete pomoći?
+
+287
+00:21:38,760 --> 00:21:40,888
+Ne znam, ali mogu pokušati.
+
+288
+00:21:42,480 --> 00:21:46,485
+Ležim budan cijelu noć buljeći u nadstrešnicu,
+
+289
+00:21:47,840 --> 00:21:49,683
+Razmišljajući o tome kako su umrli.
+
+290
+00:21:50,400 --> 00:21:53,085
+Mogu ti dati suštinu noćne sjenke da zaspiš.
+
+291
+00:21:53,440 --> 00:21:55,124
+Znaš li što su učinili mom bratu?
+
+292
+00:21:57,240 --> 00:22:00,403
+Kako su prišili glavu njegovog jezivog vuka na njegovo tijelo?
+
+293
+00:22:02,320 --> 00:22:04,448
+I moja majka.
+
+294
+00:22:04,520 --> 00:22:08,969
+Prerezali su joj grlo do kosti i bacili tijelo u rijeku.
+
+295
+00:22:09,840 --> 00:22:13,049
+Ono što se dogodilo tvojoj obitelji je užasan zločin.
+
+296
+00:22:14,080 --> 00:22:15,161
+Nisam poznavao tvog brata.
+
+297
+00:22:15,240 --> 00:22:17,288
+Činio se kao dobar čovjek, ali ga nisam poznavao.
+
+298
+00:22:18,760 --> 00:22:21,969
+Tvoja majka, divio sam joj se.
+
+299
+00:22:22,840 --> 00:22:26,049
+Htjela me pogubiti, ali divio sam joj se.
+
+300
+00:22:28,360 --> 00:22:30,283
+Bila je snažna žena.
+
+301
+00:22:31,520 --> 00:22:34,444
+I bila je žestoka kad se radilo o zaštiti svoje djece.
+
+302
+00:22:37,120 --> 00:22:38,485
+Sansa.
+
+303
+00:22:41,680 --> 00:22:43,682
+Tvoja majka bi željela da nastaviš.
+
+304
+00:22:43,760 --> 00:22:44,966
+Znaš da je to istina.
+
+305
+00:22:50,400 --> 00:22:53,165
+Oprostite, gospodaru, volio bih posjetiti šumu Godswood.
+
+306
+00:22:53,240 --> 00:22:56,562
+Naravno, molitva može biti od pomoći, čujem.
+
+307
+00:22:57,120 --> 00:22:58,281
+Više se ne molim.
+
+308
+00:22:59,640 --> 00:23:03,281
+To je jedino mjesto gdje mogu otići gdje ljudi ne razgovaraju sa mnom.
+
+309
+00:23:21,200 --> 00:23:22,281
+Moj lav.
+
+310
+00:23:24,240 --> 00:23:26,004
+Što to radiš?
+
+311
+00:23:28,520 --> 00:23:30,409
+Kako izgleda?
+
+312
+00:23:31,160 --> 00:23:32,207
+Dođi ovamo.
+
+313
+00:23:32,280 --> 00:23:34,760
+Koliko sam ti puta rekao da me ne možeš posjećivati ovdje?
+
+314
+00:23:34,840 --> 00:23:38,049
+Došli smo na opasno mjesto.
+
+315
+00:23:39,160 --> 00:23:41,481
+Znaš li koliko je prošlo?
+
+316
+00:23:41,560 --> 00:23:42,800
+Naravno da nisam zaboravio.
+
+317
+00:23:43,240 --> 00:23:45,129
+Želim te.
+
+318
+00:23:45,440 --> 00:23:46,521
+Zar me ne želiš?
+
+319
+00:23:48,480 --> 00:23:50,642
+Stvari su malo napete sada.
+
+320
+00:23:50,720 --> 00:23:52,131
+Koje stvari?
+
+321
+00:23:53,040 --> 00:23:55,247
+Moj nećak kralj me želi ubiti.
+
+322
+00:23:55,320 --> 00:23:57,891
+Žena me mrzi jer joj je otac ubio obitelj.
+
+323
+00:23:57,960 --> 00:24:01,043
+Oberyn Martell želi ubiti sve koji se prezivaju Lannister.
+
+324
+00:24:02,040 --> 00:24:05,362
+Moraš se opustiti.
+
+325
+00:24:14,840 --> 00:24:16,251
+Zar se ne želiš opustiti?
+
+326
+00:24:22,000 --> 00:24:23,445
+Što nije u redu?
+
+327
+00:24:24,160 --> 00:24:25,969
+-Nikad nije dobro vrijeme.
+
+328
+00:24:27,120 --> 00:24:29,282
+Sada imaš svoju mladu.
+
+329
+00:24:30,360 --> 00:24:31,327
+Voliš li je?
+
+330
+00:24:31,400 --> 00:24:35,883
+Jedva je poznajem, dijete je, prezire me.
+
+331
+00:24:35,960 --> 00:24:36,961
+To nije odgovor.
+
+332
+00:24:37,040 --> 00:24:38,451
+Ne volim je.
+
+333
+00:24:39,800 --> 00:24:41,802
+Pokušao si me otpremiti.
+
+334
+00:24:41,880 --> 00:24:43,405
+Otplovio si?
+
+335
+00:24:45,120 --> 00:24:47,327
+Daj mi dijamante i učini da nestanem.
+
+336
+00:24:47,400 --> 00:24:49,050
+O čemu pričaš?
+
+337
+00:24:49,120 --> 00:24:50,929
+Ako želiš da odem, samo reci.
+
+338
+00:24:52,760 --> 00:24:53,921
+Reci!
+
+339
+00:24:55,080 --> 00:24:56,730
+Ne znam o čemu pričaš.
+
+340
+00:24:58,280 --> 00:24:59,406
+Želiš da ostanem?
+
+341
+00:25:26,680 --> 00:25:27,727
+(Uzdiše)
+
+342
+00:25:27,920 --> 00:25:29,763
+Umjetničko djelo.
+
+343
+00:25:30,760 --> 00:25:32,524
+Izrada je odlična.
+
+344
+00:25:32,600 --> 00:25:35,251
+Ako ti se toliko sviđa, slobodno si odsijeci ruku i uzmi je.
+
+345
+00:25:35,320 --> 00:25:36,321
+Ti si takav nezahvalnik.
+
+346
+00:25:36,400 --> 00:25:38,687
+Proveo sam dane s zlatarom uzimajući detalje baš kako treba.
+
+347
+00:25:39,160 --> 00:25:40,161
+Dani?
+
+348
+00:25:41,240 --> 00:25:42,651
+Bolji dio popodneva.
+
+349
+00:25:43,240 --> 00:25:45,049
+Eto, kakav je osjećaj?
+
+350
+00:25:45,480 --> 00:25:46,641
+Uh...
+
+351
+00:25:48,200 --> 00:25:49,440
+Udica bi bila praktičnija.
+
+352
+00:25:49,960 --> 00:25:51,007
+Elegantno, mislim.
+
+353
+00:25:51,920 --> 00:25:53,046
+(Grunts tiho)
+
+354
+00:25:57,560 --> 00:25:59,005
+Hvala vam na pomoći oko druge stvari.
+
+355
+00:25:59,080 --> 00:26:00,809
+Simptomi su se povukli?
+
+356
+00:26:01,360 --> 00:26:02,805
+Vaš sam dužnik, meštre Qyburn.
+
+357
+00:26:02,880 --> 00:26:06,646
+Nije meštar, Vaša Milosti, ali rado ću pomoći kad god mogu.
+
+358
+00:26:15,480 --> 00:26:16,481
+(Vrata se otvaraju)
+
+359
+00:26:16,560 --> 00:26:18,483
+Čudan mali čovjek.
+
+360
+00:26:18,680 --> 00:26:19,681
+(Vrata zatvara)
+
+361
+00:26:19,760 --> 00:26:21,489
+Talentiran je.
+
+362
+00:26:21,600 --> 00:26:23,090
+Kakvi simptomi?
+
+363
+00:26:24,000 --> 00:26:26,128
+Simptomi koji nisu tvoja briga.
+
+364
+00:26:26,200 --> 00:26:28,328
+Dopustio si mu da te dira?
+
+365
+00:26:28,440 --> 00:26:30,408
+Ljubomorna si?
+
+366
+00:26:30,480 --> 00:26:31,766
+Iznenađen sam.
+
+367
+00:26:31,840 --> 00:26:33,251
+Nikad ne puštaš Pycellea blizu sebe.
+
+368
+00:26:33,520 --> 00:26:37,525
+Misliš da bih dopustio tom starom razvratniku da stavi ruke na mene?
+
+369
+00:26:38,880 --> 00:26:40,484
+Smrdi na mrtvu mačku.
+
+370
+00:26:40,560 --> 00:26:42,961
+Nisam siguran da sam ikada namirisao mrtvu mačku.
+
+371
+00:26:43,080 --> 00:26:44,969
+Pa, smrde na Pycellea.
+
+372
+00:26:45,240 --> 00:26:46,241
+Piješ više nego prije.
+
+373
+00:26:48,240 --> 00:26:50,083
+-Zašto?
+
+374
+00:26:50,160 --> 00:26:51,491
+Da vidimo.
+
+375
+00:26:51,680 --> 00:26:56,163
+Započeo si tuču na ulici s Nedom Starkom i nestao iz glavnog grada.
+
+376
+00:26:56,240 --> 00:26:58,811
+Moj muž je poginuo u tragičnoj lovačkoj nesreći.
+
+377
+00:26:58,880 --> 00:27:00,530
+Mora da ti je bilo traumatično.
+
+378
+00:27:00,600 --> 00:27:02,045
+Moja jedina kći je otpremljena u Dorne.
+
+379
+00:27:02,120 --> 00:27:03,451
+Pretrpjeli smo opsadu.
+
+380
+00:27:03,520 --> 00:27:04,806
+Kratka opsada.
+
+381
+00:27:04,880 --> 00:27:07,645
+Da nisam očekivao da ću preživjeti.
+
+382
+00:27:07,720 --> 00:27:12,442
+I sada se udajem za svog najstarijeg sina za zločestu malu kuju iz Highgardena,
+
+383
+00:27:12,520 --> 00:27:16,809
+Dok se ja trebam udati za njenog brata, poznatog ujedača jastuka.
+
+384
+00:27:16,880 --> 00:27:19,326
+Otac me se danas odrekao.
+
+385
+00:27:19,400 --> 00:27:21,767
+Ne može te se odreći.
+
+386
+00:27:21,840 --> 00:27:23,842
+Zaboravljaš Tyriona.
+
+387
+00:27:24,560 --> 00:27:28,246
+Ne planirate valjda ostati u Kraljevoj gardi?
+
+388
+00:27:32,080 --> 00:27:37,325
+Ostati u Kraljevoj gardi znači da živim ovdje u Crvenoj tvrđavi s tobom.
+
+389
+00:27:39,320 --> 00:27:41,004
+Ne sada.
+
+390
+00:27:41,080 --> 00:27:44,084
+-Vraćam se već tjednima.
+
+391
+00:27:48,440 --> 00:27:51,091
+Nešto se promijenilo.
+
+392
+00:27:51,760 --> 00:27:54,525
+Vratio si se nakon toliko vremena bez isprike i jedne ruke.
+
+393
+00:27:54,600 --> 00:27:56,568
+I očekuješ da će sve biti isto?
+
+394
+00:27:56,640 --> 00:27:57,766
+Zašto želiš da se ispričam?
+
+395
+00:27:57,840 --> 00:27:58,921
+Što si me ostavio.
+
+396
+00:27:59,080 --> 00:28:00,605
+Misliš da sam htio biti zarobljen?
+
+397
+00:28:00,680 --> 00:28:02,569
+Ne znam što si htio, nisi bio ovdje.
+
+398
+00:28:02,920 --> 00:28:05,764
+Ostavio si me na miru.
+
+399
+00:28:06,240 --> 00:28:08,561
+Svaki dan sam bio zatvorenik, smišljao sam bijeg.
+
+400
+00:28:08,640 --> 00:28:09,641
+Svaki dan.
+
+401
+00:28:09,920 --> 00:28:12,207
+Ubijao sam ljude da bih mogao biti ovdje s tobom.
+
+402
+00:28:12,280 --> 00:28:14,169
+Predugo ti je trebalo.
+
+403
+00:28:16,280 --> 00:28:18,965
+-Predugo ti je trebalo.
+
+404
+00:28:19,080 --> 00:28:20,047
+(Kucanje na vrata)
+
+405
+00:28:20,120 --> 00:28:21,804
+- Odlazi.
+
+406
+00:28:23,080 --> 00:28:24,969
+Oprostite mi, Vaša Milosti.
+
+407
+00:28:25,640 --> 00:28:28,405
+Rekao si mi da odmah dođem ako ima nešto važno.
+
+408
+00:28:35,440 --> 00:28:37,249
+(Blowing)
+
+409
+00:28:48,200 --> 00:28:51,124
+Planiraš ubiti sve vrane?
+
+410
+00:28:52,800 --> 00:28:55,167
+Planiraš li sjediti ovdje, češati jaja do zime?
+
+411
+00:28:56,000 --> 00:28:57,365
+Čekamo Manceovo naređenje.
+
+412
+00:28:57,440 --> 00:28:59,408
+Poslao si čovjeka preko Zida za vrijeme punog mjeseca.
+
+413
+00:28:59,720 --> 00:29:01,404
+Ako se još nije vratio, neće se vratiti.
+
+414
+00:29:01,640 --> 00:29:02,846
+A što ti želiš?
+
+415
+00:29:03,360 --> 00:29:06,091
+Marširaj na Crnom dvorcu sa samo ovim?
+
+416
+00:29:06,160 --> 00:29:08,481
+Tvoja lijepa vrana je rekla da se tamo gnijezdi tisuću ljudi.
+
+417
+00:29:08,680 --> 00:29:10,125
+On je lažljivac.
+
+418
+00:29:10,200 --> 00:29:11,361
+Je li?
+
+419
+00:29:12,360 --> 00:29:14,044
+Zar ne bi trebao biti... bio je...
+
+420
+00:29:15,680 --> 00:29:17,011
+Rekao si da si stavio tri strijele u njega.
+
+421
+00:29:17,080 --> 00:29:18,241
+Jesam.
+
+422
+00:29:18,760 --> 00:29:22,367
+Vidio sam te kako provlačiš okno kroz zečje oko na 200 metara.
+
+423
+00:29:22,680 --> 00:29:25,365
+Ako taj dječak je još uvijek hodanje,
+
+424
+00:29:25,440 --> 00:29:26,566
+To je zato što si ga pustio.
+
+425
+00:29:27,600 --> 00:29:28,681
+(Zviždanje)
+
+426
+00:29:51,720 --> 00:29:52,926
+Thenns.
+
+427
+00:29:54,360 --> 00:29:56,044
+Jebeno mrzim Thense.
+
+428
+00:30:07,120 --> 00:30:08,360
+Mance te poslao?
+
+429
+00:30:08,720 --> 00:30:10,563
+Kako ste nas pronašli?
+
+430
+00:30:14,280 --> 00:30:15,281
+(CAWS)
+
+431
+00:30:15,560 --> 00:30:18,166
+Došli ste s juga, ne sa sjevera.
+
+432
+00:30:19,080 --> 00:30:21,003
+Skrenuo je s puta.
+
+433
+00:30:21,080 --> 00:30:24,050
+Dobio sam večeru iz sela dolje na taj način.
+
+434
+00:30:25,520 --> 00:30:29,127
+Zašto meso ovdje dolje ima puno bolji okus?
+
+435
+00:30:29,200 --> 00:30:31,168
+nego na našoj strani Zida?
+
+436
+00:30:31,640 --> 00:30:33,005
+Poslužite se.
+
+437
+00:30:33,400 --> 00:30:34,606
+(Smješka)
+
+438
+00:30:35,960 --> 00:30:39,169
+Možda je sve samo bolje hraniti ovdje dolje.
+
+439
+00:30:39,240 --> 00:30:40,651
+Debela i lijena.
+
+440
+00:30:42,760 --> 00:30:45,286
+Lakše za nas. (Smješka)
+
+441
+00:30:47,160 --> 00:30:49,208
+Nisi nas vidio da dolazimo?
+
+442
+00:30:49,840 --> 00:30:51,410
+Izgubio si warg?
+
+443
+00:30:53,600 --> 00:30:56,126
+I da beba vrana ste imali s vama,
+
+444
+00:30:57,440 --> 00:30:58,885
+I njega si izgubio?
+
+445
+00:31:01,120 --> 00:31:02,963
+Odgovarat ću Manceu.
+
+446
+00:31:03,440 --> 00:31:05,090
+Neću ti odgovarati.
+
+447
+00:31:06,280 --> 00:31:07,611
+Ona je tvoja?
+
+448
+00:31:10,120 --> 00:31:11,804
+Ja nisam ničija.
+
+449
+00:31:21,440 --> 00:31:22,805
+Premršava.
+
+450
+00:31:23,840 --> 00:31:26,491
+Ne kao one vrane u Crnom zamku.
+
+451
+00:31:27,400 --> 00:31:30,051
+Pomislite na njih zaglavljene u svojim ostavama,
+
+452
+00:31:30,720 --> 00:31:33,803
+nadjev lica šunkom i krvavom kobasicom
+
+453
+00:31:34,120 --> 00:31:38,842
+i gulaš, uzimajući lijep i debeo i mramoran.
+
+454
+00:31:40,160 --> 00:31:43,004
+Znam da smo imali nesuglasice, Tormunde.
+
+455
+00:31:43,640 --> 00:31:47,167
+ali samo jedan put prije nego što umrete,
+
+456
+00:31:47,800 --> 00:31:51,009
+Stvarno bi trebao probati vranu.
+
+457
+00:31:54,120 --> 00:31:55,281
+Potegni.
+
+458
+00:31:56,160 --> 00:31:57,321
+Puštaj.
+
+459
+00:32:04,800 --> 00:32:08,521
+Zadnji put kad sam ga vidio, bio je u dvorištu Oštrozimlja.
+
+460
+00:32:10,880 --> 00:32:14,680
+Rekao je, \"Sljedeći put kad te vidim, bit ćeš sav u crnom.\"
+
+461
+00:32:18,360 --> 00:32:20,727
+Bila sam ljubomorna na Robba cijeli život.
+
+462
+00:32:20,800 --> 00:32:21,801
+(Uzdiše)
+
+463
+00:32:22,560 --> 00:32:25,643
+Način na koji ga je moj otac gledao, želio sam to.
+
+464
+00:32:27,000 --> 00:32:29,526
+Bio je bolji od mene u svemu.
+
+465
+00:32:31,240 --> 00:32:33,720
+Borba i lov
+
+466
+00:32:34,440 --> 00:32:35,805
+i jahanje
+
+467
+00:32:37,040 --> 00:32:38,371
+i djevojke.
+
+468
+00:32:38,880 --> 00:32:40,928
+Bogovi, djevojke su ga voljele.
+
+469
+00:32:42,480 --> 00:32:45,211
+Htjela sam ga mrziti, ali nikad nisam mogla.
+
+470
+00:32:48,560 --> 00:32:50,767
+Ponekad te želim mrziti.
+
+471
+00:32:53,240 --> 00:32:56,244
+Bolja si od mene u svemu.
+
+472
+00:32:58,880 --> 00:33:00,041
+Osim čitanja.
+
+473
+00:33:00,240 --> 00:33:01,366
+(Smijeh)
+
+474
+00:33:02,920 --> 00:33:04,285
+Oni su, hm...
+
+475
+00:33:05,240 --> 00:33:06,287
+Spremni su za tebe.
+
+476
+00:33:10,720 --> 00:33:13,326
+Želi me objesiti neko vrijeme.
+
+477
+00:33:13,400 --> 00:33:17,041
+Nitko te neće objesiti.
+
+478
+00:33:17,120 --> 00:33:19,043
+Učinio sam puno krivih stvari.
+
+479
+00:33:20,240 --> 00:33:23,084
+Znači priznaješ da si ubio Qhorina Polušaka?
+
+480
+00:33:24,240 --> 00:33:26,971
+Nisam ga ubio.
+
+481
+00:33:27,040 --> 00:33:30,044
+Probio si mač kroz brata Noćne straže.
+
+482
+00:33:30,120 --> 00:33:32,043
+Kako se to zove?
+
+483
+00:33:32,520 --> 00:33:34,363
+Htio je da ga ubijem.
+
+484
+00:33:34,440 --> 00:33:37,250
+Gad izdajnički, što bi očekivao?
+
+485
+00:33:37,640 --> 00:33:41,611
+Polovina je vjerovala da nam je jedina šansa da zaustavimo Mancea bila da uvučemo čovjeka u njegovu vojsku.
+
+486
+00:33:41,880 --> 00:33:44,963
+Ne spominji polušaku kao da ga poznaješ.
+
+487
+00:33:45,480 --> 00:33:47,801
+Onda bi znao da će učiniti sve da obrani Zid.
+
+488
+00:33:48,040 --> 00:33:50,566
+Slobodni ljudi bi ga skuhali živog, ali dopustili bi mi da ga ubijem...
+
+489
+00:33:50,640 --> 00:33:52,802
+Slobodni ljudi?
+
+490
+00:33:53,360 --> 00:33:55,169
+On čak i govori kao divljak sada.
+
+491
+00:33:55,240 --> 00:33:57,891
+Da, govorim kao divljak, jeo sam s divljacima.
+
+492
+00:33:57,960 --> 00:34:00,884
+Popeo sam se na Zid s divljacima.
+
+493
+00:34:02,840 --> 00:34:04,001
+Spavao sam s divljom djevojkom.
+
+494
+00:34:06,960 --> 00:34:08,689
+Priznaješ da si prekršio zavjete?
+
+495
+00:34:10,120 --> 00:34:11,121
+Ja znam.
+
+496
+00:34:12,080 --> 00:34:13,127
+Zakon je zakon.
+
+497
+00:34:13,880 --> 00:34:15,325
+Dječak mora umrijeti.
+
+498
+00:34:15,400 --> 00:34:19,246
+Ako odrubimo glavu svakom rendžeru koji legne s djevojkom,
+
+499
+00:34:19,640 --> 00:34:22,849
+Zid će biti okružen bezglavim ljudima.
+
+500
+00:34:23,120 --> 00:34:27,170
+Postoji razlika između iskrasti na Mole's Town bordel
+
+501
+00:34:27,240 --> 00:34:29,368
+i spava s neprijateljem.
+
+502
+00:34:30,200 --> 00:34:33,602
+Dok sjedimo ovdje i raspravljamo koja sam pravila prekršio,
+
+503
+00:34:34,400 --> 00:34:37,404
+Mance Rayder maršira na Zid s vojskom od 100.000.
+
+504
+00:34:37,960 --> 00:34:39,405
+Nemoguće.
+
+505
+00:34:39,480 --> 00:34:42,768
+Ne možeš skupiti 50 divljaka prije nego se počnu međusobno ubijati.
+
+506
+00:34:42,840 --> 00:34:44,046
+100,000.
+
+507
+00:34:44,720 --> 00:34:47,883
+On je ujedinio Thense, Hornfoote, klanove ledene rijeke.
+
+508
+00:34:47,960 --> 00:34:49,291
+Ima divove koji se bore za njega.
+
+509
+00:34:49,360 --> 00:34:50,600
+Divovi?
+
+510
+00:34:52,840 --> 00:34:54,808
+Jeste li ikada bili izvan Zida, ser?
+
+511
+00:34:54,880 --> 00:34:57,326
+Zapovijedao sam Gradskom stražom Kraljeve Luke, dečko.
+
+512
+00:34:57,400 --> 00:34:58,447
+A sada si ovdje.
+
+513
+00:34:58,520 --> 00:34:59,851
+Mora da nisi bio dobar u svom poslu.
+
+514
+00:35:00,240 --> 00:35:01,241
+Kako se usuđuješ?
+
+515
+00:35:01,680 --> 00:35:06,129
+Južno od Zida već se nalazi grupa divljaka, koju predvodi Tormund Giantsbane.
+
+516
+00:35:06,200 --> 00:35:08,521
+Ubio sam njihovu wargu i još trojicu.
+
+517
+00:35:08,600 --> 00:35:10,728
+Gađali su me strijelama.
+
+518
+00:35:11,680 --> 00:35:16,846
+Naređeno im je da napadnu Crni dvorac s juga kada ga Mance udari sa sjevera.
+
+519
+00:35:16,920 --> 00:35:19,730
+Signal za napad će biti lomača.
+
+520
+00:35:19,800 --> 00:35:22,565
+Mance je rekao da će to biti najveći požar koji je Sjever ikada vidio.
+
+521
+00:35:23,440 --> 00:35:25,090
+To je istina.
+
+522
+00:35:25,600 --> 00:35:27,090
+Sve je istina.
+
+523
+00:35:31,520 --> 00:35:34,967
+Namjeravate li me pogubiti ili mogu ići?
+
+524
+00:35:35,400 --> 00:35:37,402
+Nitko od nas nije slobodan.
+
+525
+00:35:37,480 --> 00:35:39,164
+Mi smo ljudi Noćne straže.
+
+526
+00:35:39,720 --> 00:35:43,441
+Ali nećemo ti uzeti glavu danas, Jon Snow.
+
+527
+00:35:43,840 --> 00:35:44,887
+Hajde.
+
+528
+00:35:56,200 --> 00:35:58,282
+Ja sam v.d. zapovjednik ovdje, meštre Aemon.
+
+529
+00:35:58,680 --> 00:35:59,761
+Da, jesi.
+
+530
+00:35:59,840 --> 00:36:02,081
+I ne vjerujem tom gadu.
+
+531
+00:36:03,080 --> 00:36:04,764
+Rekao je istinu.
+
+532
+00:36:05,120 --> 00:36:07,282
+I uvijek znaš kad čovjek laže?
+
+533
+00:36:07,360 --> 00:36:10,091
+Kako ste stekli tu čarobnu moć?
+
+534
+00:36:11,880 --> 00:36:14,008
+Odrastao sam u Kraljevoj Luci.
+
+535
+00:36:18,000 --> 00:36:19,843
+OLENNA: ne.
+
+536
+00:36:19,920 --> 00:36:21,968
+Ti si kraljica, ne bik.
+
+537
+00:36:23,320 --> 00:36:28,360
+Tvoj djed mi je dao ovakvu ogrlicu za 51. dan.
+
+538
+00:36:31,200 --> 00:36:32,884
+Vjenčanje je za dva tjedna, bako.
+
+539
+00:36:33,000 --> 00:36:34,889
+Ne možeš reći ne svemu.
+
+540
+00:36:34,960 --> 00:36:37,201
+Moje male drage,
+
+541
+00:36:37,720 --> 00:36:40,530
+Idi i razgovaraj sa zlatarima iz Kraljeve Luke.
+
+542
+00:36:40,920 --> 00:36:43,161
+Reci im tko si, tko te poslao.
+
+543
+00:36:43,440 --> 00:36:47,968
+Onaj koji mi donese najbolju ogrlicu će zadržati sljedeću najbolju.
+
+544
+00:36:48,160 --> 00:36:49,571
+(GIRLS smijeh)
+
+545
+00:36:52,400 --> 00:36:56,803
+Margaery Tyrell koja ulazi u Sept za dva tjedna.
+
+546
+00:36:56,880 --> 00:36:58,723
+inspirirat će tisuću pjesama.
+
+547
+00:36:59,400 --> 00:37:02,085
+Kako će biti tužno ako nosi takve gluposti.
+
+548
+00:37:02,240 --> 00:37:05,323
+Možda bih trebao pustiti Joffreya da izabere umjesto mene.
+
+549
+00:37:05,400 --> 00:37:07,926
+Završiti sa nizom mrtvih vrabac glava oko mog vrata.
+
+550
+00:37:08,000 --> 00:37:11,129
+Čak i ovdje, sa mnom.
+
+551
+00:37:11,560 --> 00:37:12,891
+(Stopama pristupa)
+
+552
+00:37:14,120 --> 00:37:15,531
+Moja riječ.
+
+553
+00:37:16,320 --> 00:37:18,084
+Moja gospo.
+
+554
+00:37:19,440 --> 00:37:21,602
+Molim vas, oprostite što vas prekidam.
+
+555
+00:37:21,680 --> 00:37:23,091
+Zovem se Brienne od Tartha.
+
+556
+00:37:23,160 --> 00:37:24,730
+Znamo tko ste, čuli smo sve o vama.
+
+557
+00:37:24,800 --> 00:37:27,201
+Ali slušanje je jedno.
+
+558
+00:37:27,680 --> 00:37:29,967
+Baš si čudesan!
+
+559
+00:37:30,680 --> 00:37:33,047
+Apsolutno jedinstveno.
+
+560
+00:37:33,920 --> 00:37:38,608
+Čujem da si oborio mog unuka u zemlju, kao blesavi dječak.
+
+561
+00:37:39,400 --> 00:37:43,291
+Moja gospo, znam da je ovo vrlo zauzeto vrijeme za vas, ali samo trenutak.
+
+562
+00:37:45,720 --> 00:37:47,245
+Ne usuđuješ se odbiti.
+
+563
+00:37:50,280 --> 00:37:51,691
+Sjena?
+
+564
+00:37:51,840 --> 00:37:54,764
+S licem Stanisa Baratheona.
+
+565
+00:37:55,760 --> 00:37:59,321
+Kunem ti se svim bogovima da je to bio Stanis.
+
+566
+00:38:00,120 --> 00:38:03,841
+Zabio je mač Renlyju u srce i nestao.
+
+567
+00:38:05,400 --> 00:38:07,971
+Jednog dana, osvetit ću našeg kralja.
+
+568
+00:38:08,040 --> 00:38:10,042
+Joffrey je sada naš kralj.
+
+569
+00:38:11,200 --> 00:38:14,090
+Nisam vas htio uvrijediti.
+
+570
+00:38:23,960 --> 00:38:25,769
+Sva Kraljeva garda će biti na dužnosti.
+
+571
+00:38:25,840 --> 00:38:27,763
+Ser Boros će biti stacioniran ovdje.
+
+572
+00:38:27,840 --> 00:38:32,721
+Ser Preston će biti stacioniran ovdje, pored primarne zabave.
+
+573
+00:38:34,720 --> 00:38:36,085
+Vaša Milosti?
+
+574
+00:38:37,400 --> 00:38:40,768
+Jedan stražar je tamo.
+
+575
+00:38:41,280 --> 00:38:44,284
+Ser Meryn će čuvati Lady Margaery i Tommen.
+
+576
+00:38:44,680 --> 00:38:49,129
+Uvijek sam čuvao kralja od vašeg odsustva.
+
+577
+00:38:49,200 --> 00:38:50,690
+I hvala vam na tome, Ser Meryn.
+
+578
+00:38:50,760 --> 00:38:53,604
+Ne očekujem nevolje.
+
+579
+00:38:54,560 --> 00:38:57,325
+Ljudi vole svog kralja, znaju tko ih hrani.
+
+580
+00:38:57,400 --> 00:38:59,084
+Margaery Tyrell, čuo sam.
+
+581
+00:39:00,840 --> 00:39:02,251
+Do mog dopusta.
+
+582
+00:39:02,560 --> 00:39:05,530
+Znaju da sam spasio grad.
+
+583
+00:39:05,600 --> 00:39:07,443
+Rat nije dobijen, ne dok je Stanis živ.
+
+584
+00:39:07,680 --> 00:39:09,921
+Slomio sam Stanisa na Blackwateru.
+
+585
+00:39:10,440 --> 00:39:12,522
+Šteta što nisi bio tu da pomogneš, ujače.
+
+586
+00:39:12,600 --> 00:39:15,126
+Ispričavam se, bio sam zauzet.
+
+587
+00:39:15,360 --> 00:39:17,249
+Zauzet uzimajući zarobljen.
+
+588
+00:39:18,960 --> 00:39:21,645
+Dakle, ovo je čuvena Knjiga braće?
+
+589
+00:39:21,720 --> 00:39:24,849
+Sva velika djela sve velike Kraljeve garde.
+
+590
+00:39:27,120 --> 00:39:30,408
+Ser Arthur Dayne, mač jutra.
+
+591
+00:39:30,480 --> 00:39:31,527
+(Smješka)
+
+592
+00:39:33,120 --> 00:39:35,361
+Vodio napad na bratstvo Kingswood.
+
+593
+00:39:35,440 --> 00:39:37,886
+Pobijedio nasmijanog viteza u jednoj borbi.
+
+594
+00:39:39,080 --> 00:39:40,650
+Ser Duncan Visoki.
+
+595
+00:39:41,880 --> 00:39:43,041
+(Smijeh)
+
+596
+00:39:43,120 --> 00:39:45,327
+Četiri stranice.
+
+597
+00:39:45,400 --> 00:39:47,482
+Mora da je bio pravi muškarac.
+
+598
+00:39:51,280 --> 00:39:52,327
+Ser Jaime Lannister.
+
+599
+00:39:52,960 --> 00:39:54,007
+Hmm. (Smješka)
+
+600
+00:39:57,320 --> 00:40:00,005
+Netko je zaboravio zapisati sva tvoja velika djela.
+
+601
+00:40:00,480 --> 00:40:02,687
+Još ima vremena.
+
+602
+00:40:03,320 --> 00:40:06,164
+Za 40-godišnjeg viteza s jednom rukom?
+
+603
+00:40:07,720 --> 00:40:09,768
+Kako me možeš zaštititi s tim?
+
+604
+00:40:09,840 --> 00:40:11,126
+Sada koristim lijevu ruku, Vaša Milosti.
+
+605
+00:40:11,840 --> 00:40:14,002
+To čini više kao natjecanje.
+
+606
+00:40:14,360 --> 00:40:15,361
+(Scoffs)
+
+607
+00:40:31,400 --> 00:40:33,323
+Jesi li ikad bio u Meereenu?
+
+608
+00:40:33,400 --> 00:40:36,051
+Nekoliko puta, Vaša Milosti, s gospodarom Kraznysom.
+
+609
+00:40:36,160 --> 00:40:37,207
+I? -Da.
+
+610
+00:40:37,560 --> 00:40:41,724
+Kažu da je tisuću robova umrlo gradeći Veliku piramidu Meereena.
+
+611
+00:40:41,800 --> 00:40:45,441
+A sada vojska bivših robova maršira prema njenim vratima.
+
+612
+00:40:46,880 --> 00:40:48,166
+Misliš da su Veliki Majstori zabrinuti?
+
+613
+00:40:48,800 --> 00:40:51,007
+Ako su pametni, Vaša Milosti.
+
+614
+00:40:54,920 --> 00:40:57,764
+Rečeno ti je da se voziš iza vlaka.
+
+615
+00:40:57,840 --> 00:40:58,887
+Da, moja kraljice.
+
+616
+00:40:59,640 --> 00:41:02,803
+Ali moram razgovarati s tobom o nečemu važnom.
+
+617
+00:41:02,880 --> 00:41:04,689
+Stvar strategije.
+
+618
+00:41:08,880 --> 00:41:10,006
+Vaša Milosti.
+
+619
+00:41:14,240 --> 00:41:16,208
+U redu, što je to pitanje strategije?
+
+620
+00:41:19,640 --> 00:41:21,085
+Ruža sumraka.
+
+621
+00:41:21,520 --> 00:41:24,330
+Želite li hodati iza vlaka umjesto da se vozite?
+
+622
+00:41:24,400 --> 00:41:27,051
+A ova se zove ženska čipka.
+
+623
+00:41:27,120 --> 00:41:29,566
+Želiš li hodati bez cipela?
+
+624
+00:41:29,640 --> 00:41:31,244
+Moraš znati zemlju da bi vladao njome.
+
+625
+00:41:31,440 --> 00:41:35,923
+Njene biljke, rijeke, ceste, ljudi.
+
+626
+00:41:36,360 --> 00:41:38,522
+Čaj od ruža umanjuje temperaturu.
+
+627
+00:41:38,680 --> 00:41:40,284
+Svi u Meereenu to znaju.
+
+628
+00:41:40,360 --> 00:41:42,601
+Pogotovo robovi koji moraju kuhati čaj.
+
+629
+00:41:42,920 --> 00:41:45,685
+Ako želiš da te slijede, moraš postati dio njihovog svijeta.
+
+630
+00:41:45,960 --> 00:41:47,007
+Strategija.
+
+631
+00:41:50,480 --> 00:41:52,448
+Harpy's Gold.
+
+632
+00:41:52,520 --> 00:41:53,646
+Od ovoga nema čaja.
+
+633
+00:41:54,120 --> 00:41:56,088
+Lijepa, ali otrovna.
+
+634
+00:42:02,920 --> 00:42:04,365
+Ti si kockar, zar ne?
+
+635
+00:42:12,440 --> 00:42:13,851
+Vaša Milosti.
+
+636
+00:42:22,320 --> 00:42:23,685
+(VOJNIK viče na valjarskom)
+
+637
+00:42:46,280 --> 00:42:49,568
+Postoji jedan na svakom milju marker odavde do Meereen.
+
+638
+00:42:49,640 --> 00:42:52,371
+Koliko ima kilometara?
+
+639
+00:42:53,080 --> 00:42:55,208
+163, Vaša Milosti.
+
+640
+00:42:56,160 --> 00:42:58,003
+Reći ću našim ljudima da jašu naprijed i pokopaju ih.
+
+641
+00:42:58,440 --> 00:42:59,487
+Ne moraš ovo vidjeti.
+
+642
+00:42:59,680 --> 00:43:01,728
+Nećeš to učiniti.
+
+643
+00:43:02,840 --> 00:43:06,162
+Vidjet ću svako njihovo lice.
+
+644
+00:43:08,280 --> 00:43:10,931
+Skinite joj ogrlicu prije nego što je pokopate.
+
+645
+00:43:17,960 --> 00:43:19,689
+Eno je.
+
+646
+00:43:19,760 --> 00:43:21,524
+Jaime:
+
+647
+00:43:23,600 --> 00:43:25,602
+-Obećao si.
+
+648
+00:43:26,520 --> 00:43:29,444
+Vratiti Starkove kćeri majci, koja je sada mrtva.
+
+649
+00:43:29,520 --> 00:43:30,931
+Da bi ih sigurno.
+
+650
+00:43:31,200 --> 00:43:34,283
+Arya Stark nije viđena otkad joj je otac ubijen.
+
+651
+00:43:34,360 --> 00:43:36,840
+Što misliš gdje je?
+
+652
+00:43:37,240 --> 00:43:40,130
+Postoji određena sigurnost u smrti, zar ne?
+
+653
+00:43:40,200 --> 00:43:42,885
+A Sansa Stark je sada Sansa Lannister.
+
+654
+00:43:43,400 --> 00:43:44,481
+Komplikacija.
+
+655
+00:43:44,880 --> 00:43:46,928
+Komplikacija te ne oslobađa zavjeta.
+
+656
+00:43:47,000 --> 00:43:47,967
+Što želiš da učinim?
+
+657
+00:43:48,040 --> 00:43:52,045
+Gdje bi bila sigurnija nego ovdje?
+
+658
+00:43:52,560 --> 00:43:56,042
+Pogledaj me u oči i reci mi da misliš da će biti sigurna u Kraljevoj Luci.
+
+659
+00:44:02,560 --> 00:44:05,484
+Jeste li sigurni da nismo u rodu?
+
+660
+00:44:05,600 --> 00:44:06,647
+Otkad sam se vratio,
+
+661
+00:44:06,720 --> 00:44:09,326
+Svaki Lannister kojeg sam vidio bio je jadna gnjavaža.
+
+662
+00:44:09,400 --> 00:44:10,401
+Možda si i ti Lannister.
+
+663
+00:44:11,080 --> 00:44:13,401
+Imaš kosu za to, ako ne i izgled.
+
+664
+00:44:32,520 --> 00:44:34,045
+(Stopama pristupa)
+
+665
+00:44:39,040 --> 00:44:40,565
+(Stop stopiranja)
+
+666
+00:44:40,640 --> 00:44:41,926
+(Uzdahe)
+
+667
+00:45:04,760 --> 00:45:07,764
+U redu je.
+
+668
+00:45:11,200 --> 00:45:13,282
+Pijan si.
+
+669
+00:45:14,280 --> 00:45:16,726
+Imam dobar razlog da budem.
+
+670
+00:45:16,800 --> 00:45:19,610
+Jednom sam bio vitez, a sada sam samo budala.
+
+671
+00:45:22,000 --> 00:45:23,650
+Zar me ne poznaješ?
+
+672
+00:45:26,520 --> 00:45:28,921
+Ser Dontos, kraljevo slavlje.
+
+673
+00:45:29,480 --> 00:45:31,562
+Žao mi je, trebao sam se sjetiti.
+
+674
+00:45:31,880 --> 00:45:33,245
+Ne mogu prihvatiti tvoju ispriku.
+
+675
+00:45:33,840 --> 00:45:37,128
+Možda sam budala, ali sam živa budala, zahvaljujući tebi.
+
+676
+00:45:38,160 --> 00:45:39,605
+Svatko bi učinio isto.
+
+677
+00:45:40,440 --> 00:45:42,568
+Ali samo ti jesi.
+
+678
+00:45:42,640 --> 00:45:45,291
+Ne mogu ti se odužiti, dao si mi život.
+
+679
+00:45:46,200 --> 00:45:50,489
+Ali ovo vrijedi više od mog života.
+
+680
+00:45:52,880 --> 00:45:55,645
+Pripadao je mojoj majci, i njenoj majci prije nje.
+
+681
+00:45:56,920 --> 00:45:58,604
+Kuća Hollard je nekad bila jaka.
+
+682
+00:45:58,680 --> 00:46:00,170
+Kuća u usponu.
+
+683
+00:46:01,000 --> 00:46:05,722
+To je sve što je ostalo od tih dana, zahvaljujući nekoliko tužnih, debelih pijanaca poput mene.
+
+684
+00:46:07,200 --> 00:46:08,406
+Ne mogu to podnijeti.
+
+685
+00:46:09,000 --> 00:46:11,606
+Ljubazno od tebe, ali ne mogu.
+
+686
+00:46:11,680 --> 00:46:13,682
+Nemam više ništa.
+
+687
+00:46:14,720 --> 00:46:16,131
+To je sve.
+
+688
+00:46:16,520 --> 00:46:18,249
+Uzmi ga, nosi ga.
+
+689
+00:46:18,600 --> 00:46:20,921
+Neka moje ime ima još jedan trenutak na suncu
+
+690
+00:46:21,000 --> 00:46:22,729
+Prije nego što nestane iz svijeta.
+
+691
+00:46:27,720 --> 00:46:29,051
+Nosit ću ga s ponosom, Ser Dontos.
+
+692
+00:46:30,800 --> 00:46:31,881
+Aha.
+
+693
+00:46:45,560 --> 00:46:47,608
+(FLIES zujanje)
+
+694
+00:46:58,800 --> 00:47:00,165
+ARYA: Kad ću i sama nabaviti konja?
+
+695
+00:47:00,720 --> 00:47:02,961
+Mala dama želi ponija.
+
+696
+00:47:03,040 --> 00:47:05,247
+Mlada dama želi da se makne od tvog smrada.
+
+697
+00:47:05,880 --> 00:47:08,087
+Nije lako doći do konja.
+
+698
+00:47:08,400 --> 00:47:12,371
+Čak i da jesu, misliš da ću te staviti na vlastitog konja?
+
+699
+00:47:12,440 --> 00:47:16,684
+Gledati jedino vrijedno što imam na svijetu kako odjaše?
+
+700
+00:47:16,760 --> 00:47:18,524
+Zašto nemaš novca?
+
+701
+00:47:18,720 --> 00:47:21,405
+Zar nisi ništa ukrao od Joffreya prije nego što si otišao?
+
+702
+00:47:21,480 --> 00:47:22,527
+Ne. Ne.
+
+703
+00:47:23,280 --> 00:47:25,851
+Nisi baš pametan, zar ne?
+
+704
+00:47:25,920 --> 00:47:27,365
+Nisam lopov.
+
+705
+00:47:27,440 --> 00:47:31,809
+Ti si u redu s ubijanjem malih dječaka, ali lopovluk je ispod vas?
+
+706
+00:47:31,880 --> 00:47:33,609
+Čovjek mora imati kod.
+
+707
+00:47:34,120 --> 00:47:36,691
+Misliš da ću pobjeći?
+
+708
+00:47:36,760 --> 00:47:38,683
+Gdje bih otišao?
+
+709
+00:47:38,760 --> 00:47:43,209
+Bio bih mrtav do mraka bez tebe, moja obitelj je nestala, nemam nikoga.
+
+710
+00:47:44,040 --> 00:47:47,249
+Imaš tetu u Dolini, bogatu tetu Lysu.
+
+711
+00:47:48,160 --> 00:47:49,844
+Nakon što sam vas prodati joj,
+
+712
+00:47:49,920 --> 00:47:54,323
+Možda će imati dovoljno da ti kupi ponija kojeg toliko želiš.
+
+713
+00:47:56,960 --> 00:47:59,361
+Gladan sam, ti si gladan.
+
+714
+00:48:00,080 --> 00:48:01,969
+Pet konja, pet ljudi.
+
+715
+00:48:02,800 --> 00:48:06,009
+Više nego što mi se ubija na prazan želudac.
+
+716
+00:48:07,160 --> 00:48:09,128
+(MEN Govoreći nejasno)
+
+717
+00:48:12,960 --> 00:48:13,961
+Poznajem ga.
+
+718
+00:48:15,000 --> 00:48:17,321
+Zove se Polliver.
+
+719
+00:48:17,960 --> 00:48:20,247
+Zarobio nas je i odveo u Harrenhal.
+
+720
+00:48:20,440 --> 00:48:22,044
+(OBA URINATING)
+
+721
+00:48:22,760 --> 00:48:24,364
+Ubio je Lommyja.
+
+722
+00:48:25,040 --> 00:48:26,371
+Koji kurac je Lommy?
+
+723
+00:48:26,640 --> 00:48:28,290
+Bio mi je prijatelj.
+
+724
+00:48:29,320 --> 00:48:31,766
+Poliver mi je ukrao mač i zabio mu ga u vrat.
+
+725
+00:48:34,320 --> 00:48:35,446
+Još uvijek ga ima.
+
+726
+00:48:35,880 --> 00:48:37,166
+Dobio što?
+
+727
+00:48:37,240 --> 00:48:39,083
+Moj mač Igla.
+
+728
+00:48:39,240 --> 00:48:40,446
+Igla?
+
+729
+00:48:41,160 --> 00:48:43,049
+Naravno da si dao ime svom maču.
+
+730
+00:48:43,120 --> 00:48:44,326
+Puno ljudi imenuje svoje mačeve.
+
+731
+00:48:44,600 --> 00:48:46,090
+Puno pički.
+
+732
+00:48:50,360 --> 00:48:52,010
+(Stopama vraćanja)
+
+733
+00:48:52,520 --> 00:48:53,931
+Što to...
+
+734
+00:48:54,000 --> 00:48:56,287
+Moj brat mi je dao taj mač.
+
+735
+00:48:56,360 --> 00:48:58,203
+-Ubio mi je prijatelja.
+
+736
+00:48:58,880 --> 00:49:00,769
+Nije me briga što je pojeo tvog prijatelja.
+
+737
+00:49:00,840 --> 00:49:02,205
+Ne idemo tamo.
+
+738
+00:49:06,480 --> 00:49:08,960
+Hajde, odustani.
+
+739
+00:49:09,040 --> 00:49:11,008
+(ŽENA cvileći)
+
+740
+00:49:13,200 --> 00:49:15,441
+Dođi ovamo.
+
+741
+00:49:15,840 --> 00:49:18,320
+Hajde da osjetimo, a?
+
+742
+00:49:47,560 --> 00:49:50,086
+Dođi ovamo.
+
+743
+00:49:51,600 --> 00:49:53,284
+Molim te, ona je dobra djevojka.
+
+744
+00:49:53,360 --> 00:49:55,010
+Začepi gubicu i natoči nam još piva.
+
+745
+00:49:55,080 --> 00:49:58,687
+I možda je ne povedemo sa sobom kad završimo s njom.
+
+746
+00:50:02,640 --> 00:50:04,051
+Poznajem te.
+
+747
+00:50:07,240 --> 00:50:08,526
+Ti si Pseto.
+
+748
+00:50:10,920 --> 00:50:12,570
+Sipaj našem novom prijatelju pivo.
+
+749
+00:50:17,600 --> 00:50:19,364
+Što te dovodi tako daleko na sjever?
+
+750
+00:50:19,440 --> 00:50:22,171
+Mogao bih pitati isto od vas.
+
+751
+00:50:22,240 --> 00:50:23,810
+Samo održavam kraljev mir.
+
+752
+00:50:23,880 --> 00:50:25,609
+Nema potrebe, rat je gotov.
+
+753
+00:50:25,800 --> 00:50:29,043
+Čuo sam da je Stanis poražen kod Blackwatera.
+
+754
+00:50:29,120 --> 00:50:30,770
+Robb Stark je ubijen u Blizancima.
+
+755
+00:50:30,880 --> 00:50:32,120
+A gdje sam ja za sve to?
+
+756
+00:50:32,800 --> 00:50:34,768
+Zaglavio sam s tvojim bratom.
+
+757
+00:50:34,840 --> 00:50:37,002
+- Bez uvrede.
+
+758
+00:50:37,080 --> 00:50:40,050
+Dobar je, Planina je najbolja u onome što radi.
+
+759
+00:50:40,120 --> 00:50:43,442
+Ali mučenje, mučenje.
+
+760
+00:50:44,280 --> 00:50:46,487
+Vi potrošiti dovoljno vremena stavljajući čekić na ljude,
+
+761
+00:50:46,560 --> 00:50:49,404
+Počinješ se osjećati kao stolar koji pravi stolice.
+
+762
+00:50:49,560 --> 00:50:51,369
+Isušuje zabavu iz nje.
+
+763
+00:50:51,440 --> 00:50:52,680
+A što je život bez malo zabave?
+
+764
+00:50:52,880 --> 00:50:54,120
+(Poliver smješka)
+
+765
+00:50:56,520 --> 00:50:58,204
+Ali ne moram ti to reći, zar ne?
+
+766
+00:51:00,880 --> 00:51:03,087
+U redu je, bilo je i bolje.
+
+767
+00:51:03,160 --> 00:51:04,207
+(Smijeh)
+
+768
+00:51:06,640 --> 00:51:08,165
+Znaš što?
+
+769
+00:51:09,160 --> 00:51:11,128
+Trebao bi poći s nama.
+
+770
+00:51:11,640 --> 00:51:14,484
+Njegova vrsta, uvijek ima nešto skriveno negdje.
+
+771
+00:51:14,840 --> 00:51:17,411
+Zlato, srebro, još kćeri.
+
+772
+00:51:17,560 --> 00:51:19,927
+Uvijek nešto ako znaš kako ih natjerati da govore.
+
+773
+00:51:20,000 --> 00:51:22,765
+I ima ga dosta odavde do Kraljeve Luke.
+
+774
+00:51:22,840 --> 00:51:24,205
+Ti bi mogao učiniti dobro za sebe.
+
+775
+00:51:24,280 --> 00:51:26,169
+Naravno da jesmo.
+
+776
+00:51:29,760 --> 00:51:32,650
+Ne idem u Kraljevu Luku.
+
+777
+00:51:32,720 --> 00:51:35,690
+Možemo raditi što god želimo, gdje god da idemo.
+
+778
+00:51:37,440 --> 00:51:39,442
+Ovo su kraljeve boje.
+
+779
+00:51:39,520 --> 00:51:41,602
+Nitko mu ne stoji na putu.
+
+780
+00:51:41,680 --> 00:51:44,126
+Što znači da nitko ne stoji u našem.
+
+781
+00:51:44,200 --> 00:51:45,770
+(MEN smijeh)
+
+782
+00:51:46,280 --> 00:51:47,486
+Jebeš kralja.
+
+783
+00:51:47,800 --> 00:51:49,290
+(Smijeh zaustavlja)
+
+784
+00:51:58,040 --> 00:52:01,931
+Kada sam čuo da je Joffreyev pas ušuškao rep i pobjegao iz bitke za Blackwater,
+
+785
+00:52:02,320 --> 00:52:04,084
+Nisam vjerovao.
+
+786
+00:52:04,400 --> 00:52:06,641
+Ali tu si.
+
+787
+00:52:07,560 --> 00:52:09,483
+Donesi mi jednu od onih kokoši.
+
+788
+00:52:09,560 --> 00:52:12,882
+Imaš li novaca da ga platiš?
+
+789
+00:52:13,040 --> 00:52:14,087
+(Smijeh) Ne
+
+790
+00:52:14,680 --> 00:52:15,727
+Ali mi smo kraljevi ljudi.
+
+791
+00:52:17,080 --> 00:52:19,162
+Dakle, imaš li novca?
+
+792
+00:52:19,880 --> 00:52:21,325
+Ni novčića.
+
+793
+00:52:22,000 --> 00:52:24,241
+Ipak ću uzeti tu piletinu.
+
+794
+00:52:24,640 --> 00:52:26,290
+Reći ću ti nešto.
+
+795
+00:52:26,360 --> 00:52:27,885
+Mijenjat ćemo se.
+
+796
+00:52:27,960 --> 00:52:30,327
+Jedan od naših pilića za jednog od tvojih.
+
+797
+00:52:31,480 --> 00:52:33,050
+Daj nam da vidimo tvog prijatelja.
+
+798
+00:52:34,400 --> 00:52:36,926
+Lowell ih voli malo provaljivati.
+
+799
+00:52:37,000 --> 00:52:38,411
+(MEN cerekanje)
+
+800
+00:52:44,360 --> 00:52:45,964
+Ti si govornik.
+
+801
+00:52:47,760 --> 00:52:50,604
+Od slušanja ožednim.
+
+802
+00:53:06,320 --> 00:53:07,446
+(Uzdiše)
+
+803
+00:53:08,840 --> 00:53:10,251
+I gladan.
+
+804
+00:53:11,040 --> 00:53:13,247
+Mislim da ću uzeti dvije kokoši.
+
+805
+00:53:22,320 --> 00:53:24,482
+Ne razumiješ situaciju.
+
+806
+00:53:25,160 --> 00:53:29,609
+Razumijem da ako bilo više riječi dolaze izlijevati svoje pičke usta,
+
+807
+00:53:30,440 --> 00:53:34,729
+Morat ću pojesti svaku jebenu piletinu u ovoj sobi.
+
+808
+00:53:34,800 --> 00:53:37,167
+Živio si svoj život za kralja.
+
+809
+00:53:38,280 --> 00:53:39,964
+Umrijet ćeš za neke kokoši?
+
+810
+00:53:41,520 --> 00:53:42,931
+Netko je.
+
+811
+00:53:49,840 --> 00:53:50,841
+(HUND grunts)
+
+812
+00:53:52,320 --> 00:53:53,651
+(MAN vikanje)
+
+813
+00:54:06,400 --> 00:54:08,323
+(ŽENA cvileći)
+
+814
+00:54:11,240 --> 00:54:12,969
+(Oba stenjući)
+
+815
+00:54:20,080 --> 00:54:22,367
+(MEN stenjući)
+
+816
+00:54:35,680 --> 00:54:37,091
+(Uzdiše)
+
+817
+00:54:42,040 --> 00:54:43,041
+(Vrišti)
+
+818
+00:54:49,680 --> 00:54:50,886
+(Stenjući)
+
+819
+00:55:07,000 --> 00:55:09,128
+(Vrišti)
+
+820
+00:55:10,560 --> 00:55:12,050
+(Dahtanje)
+
+821
+00:55:21,400 --> 00:55:22,731
+(Marinci)
+
+822
+00:55:24,560 --> 00:55:25,925
+(Uzdiše)
+
+823
+00:55:31,360 --> 00:55:33,089
+(Vrišti)
+
+824
+00:55:37,600 --> 00:55:38,601
+(Uzdiše)
+
+825
+00:55:40,880 --> 00:55:43,406
+Nešto nije u redu s tvojom nogom, dečko?
+
+826
+00:55:43,680 --> 00:55:45,603
+Kako to misliš?
+
+827
+00:55:45,760 --> 00:55:48,445
+Možeš li hodati, moram te nositi?
+
+828
+00:55:49,160 --> 00:55:50,286
+Nositi me?
+
+829
+00:55:53,000 --> 00:55:54,331
+Fina mala oštrica.
+
+830
+00:56:00,320 --> 00:56:02,129
+Možda ću čačkati zube s njim.
+
+831
+00:56:03,160 --> 00:56:04,161
+(Uzdahe)
+
+832
+00:56:12,280 --> 00:56:13,441
+(Gurgling)
