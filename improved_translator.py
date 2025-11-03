@@ -2537,6 +2537,11 @@ class SubtitleTranslatorApp:
 3. Podesite dodatne opcije po potrebi
 4. Pritisnite gumb 'Prevedi' za početak
 
+NOVO U VERZIJI 1.0.1:
+- Poboljšano praćenje napretka prevođenja s realnim ažuriranjem postotka
+- Prikaz preostalog vremena za završetak prevođenja
+- Poboljšana responzivnost korisničkog sučelja tokom dugotrajnih operacija
+
 BATCH MOD:
 - Omogućuje obradu svih .srt datoteka u odabranoj mapi
 - Rezultati će biti spremljeni u odabranu izlaznu mapu
@@ -2562,18 +2567,23 @@ KAKO DOBITI API KLJUČEVE:
    - Kopirajte token i zalijepite u postavkama
    - Ako model nije lokalno dostupan, aplikacija će ga automatski preuzeti
 
-KORIŠTENJE HUGGING FACE MODELA:
+KORIŠTENJE MODELA ZA PREVOĐENJE:
 
 1. Prvo korištenje:
    - Prilikom prvog pokretanja, aplikacija će preuzeti potrebne modele
    - Preuzimanje može potrajati nekoliko minuta, ovisno o brzini veze
    - Modeli se spremaju lokalno za buduću upotrebu
 
-2. Preporučeni modeli:
-   - Glavni model: Helsinki-NLP/opus-mt-en-zls
-   - Alternativni modeli:
-     - Helsinki-NLP/opus-mt-en-sla (za slavenske jezike)
-     - facebook/nllb-200-distilled-600M (za višejezično prevođenje)
+2. Korišteni modeli:
+   - Glavni model: Helsinki-NLP/opus-mt-tc-base-en-sh (od verzije 1.0.1)
+   - Prethodni model: Helsinki-NLP/opus-mt-en-zls (do verzije 1.0.0)
+   
+   Napomena: Novi model pruža bolje rezultate u prijevodu s engleskog na hrvatski.
+   
+3. Specifičnosti novog modela:
+   - Koristi eksplicitan prefiks '>>hrv<<' za svaki tekst prije prevođenja
+   - Bolje rješava problem miješanja srodnih jezika (npr. srpski)
+   - Poboljšana točnost prijevoda u usporedbi s prethodnim modelom
 
 3. Rješavanje problema:
    - Ako se model ne preuzima, provjerite internetsku vezu
@@ -2627,16 +2637,22 @@ Aplikacija razvijena uz ljubav od strane Denisa Sakača
         """Prikazuje prozor s informacijama o programu."""
         about_text = """Sinkronizator titlova
 
-Verzija: 0.12
+Verzija: 1.0.1 (3.11.2025.)
 
 Aplikacija za prevođenje i sinkronizaciju titlova s engleskog na hrvatski jezik.
+
+NOVE ZNAČAJKE:
+- Novi model za prevođenje: Helsinki-NLP/opus-mt-tc-base-en-sh
+- Poboljšano praćenje napretka s realnim vremenom
+- Bolja podrška za sinkronizaciju titlova
+- Poboljšana responzivnost korisničkog sučelja
 
 Autor: Denis Sakač
 Kontakt: https://www.facebook.com/sdenis.vr/
 
 Koristi napredne tehnike obrade prirodnog jezika za preciznije prevođenje.
 
-© 2023-2024 Sva prava pridržana
+© 2023-2025 Sva prava pridržana
 """
         messagebox.showinfo("O programu", about_text)
     
