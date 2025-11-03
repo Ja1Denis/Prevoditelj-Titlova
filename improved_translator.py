@@ -168,7 +168,7 @@ class GenderAnalyzer:
 class ImprovedSubtitleTranslator:
     """Glavna klasa za prevođenje titlova."""
     
-    def __init__(self, model_name="Helsinki-NLP/opus-mt-en-zls", metadata_csv: Optional[str] = None, user_dict_path: Optional[str] = None):
+    def __init__(self, model_name="Helsinki-NLP/opus-mt-tc-base-en-sh", metadata_csv: Optional[str] = None, user_dict_path: Optional[str] = None):
         self.tokenizer = MarianTokenizer.from_pretrained(model_name)
         self.model = MarianMTModel.from_pretrained(model_name)
         self.gender_analyzer = GenderAnalyzer()
@@ -202,11 +202,20 @@ class ImprovedSubtitleTranslator:
                 self._csv_text_gender = {}
         
         # Učitaj korisnički rječnik (opcionalno) - NAKON discourse markers
-        if user_dict_path and os.path.exists(user_dict_path):
-            try:
-                self._load_user_dictionary(user_dict_path)
-            except Exception:
-                pass
+        if user_dict_path:
+            if os.path.exists(user_dict_path):
+                try:
+                    self._load_user_dictionary(user_dict_path)
+                    print(f"✓ Uspješno učitano {len(self._user_pairs)} parova iz korisničkog rječnika")
+                except Exception as e:
+                    print("\n!!!!!!!! UPOZORENJE !!!!!!!!")
+                    print(f"Nije moguće učitati korisnički rječnik: '{user_dict_path}'")
+                    print(f"Greška: {e}")
+                    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+            else:
+                print("\n!!!!!!!! UPOZORENJE !!!!!!!!")
+                print(f"Nije pronađena datoteka s korisničkim rječnikom: '{user_dict_path}'")
+                print("Provjerite je li putanja točna i da datoteka postoji.\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
         
         # Učitaj CSV s imenima i rodom (npr. "imena_kategorizirana_ispravljeno.csv")
         if metadata_csv and os.path.exists(metadata_csv):
@@ -363,27 +372,60 @@ class ImprovedSubtitleTranslator:
         #             self.context.update_context(i, subtitles)
         #             subtitle['translation_info'] = self._analyze_subtitle(text, i, subtitles)
         
-        # 4. Sada možemo početi s prijevodom
-        translated_count = 0
-        batch_size = 3
+        # 4. Prvo obradi sve titlove kroz rječnik
+        print("\n⏳ Provjera prijevoda u korisničkom rječniku...")
         
-        for i in range(0, len(subtitles), batch_size):
-            batch_end = min(i + batch_size, len(subtitles))
-            batch = subtitles[i:batch_end]
+        # Pripremi listu titlova koji zahtijevaju prevođenje
+        subtitles_to_translate = []
+        
+        for i, subtitle in enumerate(subtitles):
+            # Ažuriraj kontekst za svaki titl
+            self.context.update_context(i, subtitles)
             
-            for j, subtitle in enumerate(batch):
-                global_idx = i + j
-                self.context.update_context(global_idx, subtitles)
-                # Ako već nismo analizirali ovaj titl u prethodnom koraku
-                if 'translation_info' not in subtitle:
-                    # Analiziramo tekst koji je možda već polu-preveden (npr. "Pa, I don't know")
-                    subtitle['translation_info'] = self._analyze_subtitle(subtitle['text'], global_idx, subtitles)
+            # Analiziraj titl
+            if 'translation_info' not in subtitle:
+                subtitle['translation_info'] = self._analyze_subtitle(subtitle['text'], i, subtitles)
             
-            print(f"\nPokrećem batch prevođenje {i+1}-{batch_end}...")
-            # Prvo prevedi batch
+            # Provjeri postoji li prijevod u rječniku
+            dict_translation = self._get_dictionary_translation(subtitle['text'].strip())
+            
+            if dict_translation is not None:
+                # Ako postoji prijevod u rječniku, koristi ga
+                print(f"\n✓ PRONAĐEN PRIJEVOD U RJEČNIKU:")
+                print(f"  Original: {subtitle['text']}")
+                print(f"  Prijevod: {dict_translation}")
+                
+                # Ažuriraj tekst s prevedenim sadržajem
+                subtitle['text'] = dict_translation
+                subtitle['translated_text'] = dict_translation
+                
+                # Označi da je već preveden
+                subtitle['already_translated'] = True
+            else:
+                # Ako nema prijevoda u rječniku, označi za prevođenje
+                subtitle['needs_translation'] = True
+                subtitles_to_translate.append(subtitle)
+        
+        # 5. Sada prevedi samo one koji to zahtijevaju
+        print(f"\n📊 Statistika:")
+        print(f"   Ukupno titlova: {len(subtitles)}")
+        print(f"   Prevedeno iz rječnika: {len(subtitles) - len(subtitles_to_translate)}")
+        print(f"   Za prevesti: {len(subtitles_to_translate)}")
+        
+        # Grupiraj titlove u batch-e za prevođenje
+        batch_size = 3
+        translated_count = 0
+        
+        for i in range(0, len(subtitles_to_translate), batch_size):
+            batch_end = min(i + batch_size, len(subtitles_to_translate))
+            batch = subtitles_to_translate[i:batch_end]
+            
+            print(f"\n🔄 Prevođenje grupe {i//batch_size + 1} (titlovi {i+1}-{batch_end})...")
+            
+            # Prevedi batch
             self._translate_batch(batch)
             
-            # Zatim provjeri kvalitetu svakog prevedenog titla
+            # Provjeri kvalitetu prevedenih titlova
             for sub in batch:
                 if 'translated_text' in sub:
                     if not self._save_checked_subtitle(sub, sub['translated_text'], output_path):
@@ -393,7 +435,15 @@ class ImprovedSubtitleTranslator:
             translated_count += len(batch)
             
             if translated_count % 25 == 0:
-                print(f"   Prevedeno {translated_count}/{len(subtitles)}...")
+                print(f"   Prevedeno {translated_count}/{len(subtitles_to_translate)}...")
+        
+        # Ažuriraj sve prevedene titlove u glavnoj listi
+        translated_idx = 0
+        for i, sub in enumerate(subtitles):
+            if sub.get('needs_translation') and translated_idx < len(subtitles_to_translate):
+                if 'translated_text' in subtitles_to_translate[translated_idx]:
+                    sub['translated_text'] = subtitles_to_translate[translated_idx]['translated_text']
+                translated_idx += 1
         
         # Nakon što su svi titlovi prevedeni i provjereni, spremi sve odjednom
         self._write_srt(subtitles, output_path)
@@ -510,7 +560,10 @@ class ImprovedSubtitleTranslator:
         
         speaker_match = re.match(r'^([^:]+):', text)
         if speaker_match:
-            current_speaker = speaker_match.group(1).strip().lower()
+            # Ukloni zagrade i suvišne razmake
+            speaker_name = speaker_match.group(1)
+            speaker_name = re.sub(r'[\[\]\(\)]', '', speaker_name).strip()
+            current_speaker = speaker_name.lower()
         
         if current_speaker:
             ext_gender = self._speaker_gender_external.get(current_speaker)
@@ -680,6 +733,59 @@ class ImprovedSubtitleTranslator:
             return {}
         return mapping
 
+    def _post_process_translation(self, text: str, original_text: str) -> str:
+        """Primjenjuje pravila za post-procesiranje na prevedeni tekst.
+        
+        Args:
+            text: Prevedeni tekst za obradu
+            original_text: Originalni engleski tekst (za referencu)
+            
+        Returns:
+            Obradjeni prevedeni tekst
+        """
+        if not text:
+            return text
+            
+        # Primjeri pravila za post-procesiranje:
+        
+        # 1. Ispravak "Tata" u "Tata:" ako je na početku reda i slijedi dvotočka u originalu
+        if original_text.strip().startswith('Dad:') and text.strip().startswith('Tata'):
+            text = text.replace('Tata', 'Tata:', 1)
+            
+        # 2. Ispravak "Mama" u "Mama:" ako je na početku reda i slijedi dvotočka u originalu
+        if original_text.strip().startswith('Mom:') and text.strip().startswith('Mama'):
+            text = text.replace('Mama', 'Mama:', 1)
+            
+        # 3. Uklanjanje višestrukih razmaka
+        text = ' '.join(text.split())
+        
+        # 4. Dodavanje točke na kraju rečenice ako je potrebno
+        if text and not text.endswith(('.', '!', '?', ':', '"', "'")):
+            text = text + '.'
+            
+        return text
+        
+    def _get_dictionary_translation(self, text: str) -> Optional[str]:
+        """Provjerava postoji li točno podudaranje u korisničkom rječniku.
+        
+        Vraća prijevod ako postoji točno podudaranje, inače None.
+        """
+        if not text or not self._user_pairs:
+            return None
+            
+        # Provjeri točno podudaranje (case-insensitive)
+        text_lower = text.lower()
+        for pattern, replacement, _ in self._user_pairs:
+            # Provjeri je li pattern regex ili običan tekst
+            if hasattr(pattern, 'pattern'):  # Ako je regex
+                if re.fullmatch(pattern.pattern, text, flags=re.IGNORECASE):
+                    # Ako postoji točno podudaranje, vrati prijevod
+                    return replacement
+            else:  # Ako je običan tekst
+                if pattern.lower() == text_lower:
+                    return replacement
+        return None
+
     def _translate_batch(self, subtitles: List[dict]):
         """Prevodi grupu titlova s kontekstom."""
         print("\n=== ANALIZA KONTEKSTA PRIJE PREVOĐENJA ===")
@@ -711,10 +817,24 @@ class ImprovedSubtitleTranslator:
             text = subtitle['text']
             info = subtitle.get('translation_info', {})
             
-            # Spremi originalni tekst za kasniju obradu
+            # Provjeri postoji li prijevod u korisničkom rječniku
+            dict_translation = self._get_dictionary_translation(text.strip())
+            if dict_translation is not None:
+                print(f"\n✓ PRONAĐEN PRIJEVOD U RJEČNIKU:")
+                print(f"  Original: {text}")
+                print(f"  Prijevod: {dict_translation}")
+                # Dodaj direktno prevedeni tekst u rezultate
+                translated_texts.append(dict_translation)
+                # Dodaj prazan string u texts_to_translate kako bi se održao indeks
+                texts_to_translate.append("")
+                translation_infos.append(info)
+                continue
+                
+            # Spremi originalni engleski tekst za prevođenje
             info['src_text'] = text
             translation_infos.append(info)
-            texts_to_translate.append(self._prepare_text_for_translation(text, info))
+            # Koristimo originalni tekst bez ikakvih modifikacija
+            texts_to_translate.append(text)
     
         try:
             inputs = self.tokenizer(texts_to_translate, 
@@ -727,6 +847,31 @@ class ImprovedSubtitleTranslator:
             translated_texts = [self.tokenizer.decode(t, skip_special_tokens=True) 
                               for t in translations]
             
+            # Primijeni post-procesiranje na sve prevedene tekstove
+            for i, (translated, info) in enumerate(zip(translated_texts, translation_infos)):
+                # Ako je prazan string, to znači da je korišten prijevod iz rječnika
+                if translated == "" and i < len(translated_texts):
+                    continue
+                    
+                # Primijeni post-procesiranje na prevedeni tekst
+                original_text = info.get('src_text', '')
+                processed_text = self._post_process_translation(translated, original_text)
+                
+                # Ako je došlo do promjene u tekstu, prijavi to
+                if processed_text != translated:
+                    print(f"\n✓ PRIMIJENJENO POST-PROCESIRANJE:")
+                    print(f"  Prije: {translated}")
+                    print(f"  Poslije: {processed_text}")
+                
+                translated_texts[i] = processed_text
+                
+                # Dodatna obrada ako je potrebna
+                if 'translation_info' in info and 'context' in info['translation_info']:
+                    context = info['translation_info']['context']
+                    # Primjeri dodatne obrade temeljene na kontekstu
+                    if context.get('is_question', False) and not processed_text.endswith('?'):
+                        translated_texts[i] = processed_text.rstrip('.') + '?'
+                
             print("\nRezultati batch prevođenja:")
             for orig, trans in zip(texts_to_translate, translated_texts):
                 print(f"  Original: {orig}")
@@ -969,48 +1114,102 @@ class ImprovedSubtitleTranslator:
                 if not found:
                     print(f"  ⚠️  Moguć problem s prijevodom glagola: {eng_verb}")
     
+    def _cyr_to_lat(self, text: str) -> str:
+        """Pretvara ćirilična slova u latinična (za srpski/hrvatski)."""
+        if not text:
+            return text
+            
+        # Posebni slučajevi za česte greške
+        special_cases = {
+            'ДаклComment': 'Dakle',
+            'Дакл': 'Dakle',
+            'Дакле': 'Dakle',
+            'добро': 'dobro',
+            'хвала': 'hvala',
+            'здраво': 'zdravo',
+            'пријатељ': 'prijatelj',
+            'видимо се': 'vidimo se'
+        }
+        
+        # Prvo provjeri posebne slučajeve
+        for cyr, lat in special_cases.items():
+            if cyr in text:
+                text = text.replace(cyr, lat)
+        
+        # Rječnik za konverziju ćirilice u latinicu
+        cyr_to_lat = {
+            'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'ђ': 'đ', 'е': 'e', 'ж': 'ž',
+            'з': 'z', 'и': 'i', 'ј': 'j', 'к': 'k', 'л': 'l', 'љ': 'lj', 'м': 'm', 'н': 'n',
+            'њ': 'nj', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'ћ': 'ć', 'у': 'u',
+            'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'č', 'џ': 'dž', 'ш': 'š',
+            # Velika slova
+            'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D', 'Ђ': 'Đ', 'Е': 'E', 'Ж': 'Ž',
+            'З': 'Z', 'И': 'I', 'Ј': 'J', 'К': 'K', 'Л': 'L', 'Љ': 'Lj', 'М': 'M', 'Н': 'N',
+            'Њ': 'Nj', 'О': 'O', 'П': 'P', 'Р': 'R', 'С': 'S', 'Т': 'T', 'Ћ': 'Ć', 'У': 'U',
+            'Ф': 'F', 'Х': 'H', 'Ц': 'C', 'Ч': 'Č', 'Џ': 'Dž', 'Ш': 'Š'
+        }
+        
+        # Pretvori svaki znak ako postoji u rječniku, inače ostavi nepromijenjen
+        result = []
+        i = 0
+        n = len(text)
+        
+        while i < n:
+            # Provjeri za lj, nj, dž, LJ, NJ, DŽ
+            if i + 1 < n:
+                two_chars = text[i:i+2]
+                if two_chars.lower() in ['лј', 'њ', 'џ', 'лј', 'њ', 'џ']:
+                    if two_chars.isupper():
+                        result.append(cyr_to_lat.get(two_chars[0], two_chars[0]) + 
+                                    (cyr_to_lat.get(two_chars[1], two_chars[1]) 
+                                     if two_chars[1] in cyr_to_lat else two_chars[1]))
+                    else:
+                        result.append(cyr_to_lat.get(two_chars[0].lower(), two_chars[0].lower()) + 
+                                    (cyr_to_lat.get(two_chars[1].lower(), two_chars[1].lower()) 
+                                     if two_chars[1].lower() in cyr_to_lat 
+                                     else two_chars[1].lower()))
+                    i += 2
+                    continue
+            
+            # Inače obična konverzija
+            result.append(cyr_to_lat.get(text[i], text[i]))
+            i += 1
+        
+        return ''.join(result)
+
     def _postprocess_translation(self, translated_text: str, info: dict) -> str:
         """Naknadna obrada prevedenog teksta."""
         if not translated_text:
             return translated_text
             
+        # Prvo pretvori sve ćirilične znakove u latinične
+        processed = self._cyr_to_lat(translated_text)
+        
         # Ako je originalni tekst bio "Pa..." i preveden je u "Tata...", vrati "Pa..."
         original_text = info.get('src_text', '').strip()
-        if original_text.lower() in ['pa', 'pa.', 'pa...'] and any(t in translated_text for t in ['Tata', 'Tata.', 'Tata,', 'Tata...']):
-            print(f"  ✓ OČUVAN DISKLEJMER: Vraćam originalni 'Pa...' umjesto '{translated_text}'")
+        if original_text.lower() in ['pa', 'pa.', 'pa...'] and any(t in processed for t in ['Tata', 'Tata.', 'Tata,', 'Tata...']):
+            print(f"  ✓ OČUVAN DISKLEJMER: Vraćam originalni 'Pa...' umjesto '{processed}'")
+            return 'Pa...'
             
         # Poseban slučaj za "Yes" -> "Da"
         if original_text.strip().lower() == 'yes':
-            if 'jesam' in translated_text.lower() or 'jeste' in translated_text.lower() or 'jesi' in translated_text.lower():
-                print(f"  ✓ ISPRAVKA: 'Yes' se prevodi kao 'Da' umjesto '{translated_text}'")
+            if 'jesam' in processed.lower() or 'jeste' in processed.lower() or 'jesi' in processed.lower():
+                print(f"  ✓ ISPRAVKA: 'Yes' se prevodi kao 'Da' umjesto '{processed}'")
                 # Sačuvaj interpunkciju s kraja originalnog teksta
                 if original_text.rstrip().endswith(('.', '!', '?')):
-                    return 'Da' + original_text.rstrip()[-1]
-                return 'Da'
-        gender = (info or {}).get('gender') if info else None
-        src_text = (info or {}).get('src_text') if info else None # Ovo je npr. "Pa, I don't know"
+                    processed = 'Da' + original_text.rstrip()[-1]
+                else:
+                    processed = 'Da'
         
+        # Primijeni ženske korekcije ako je potrebno
+        gender = info.get('gender')
         if gender == 'female':
-            translated_text = self._apply_feminine_corrections(translated_text)
+            processed = self._apply_feminine_corrections(processed)
             
         # Primijeni lažne prijatelje (ali ne discourse markers) na HRVATSKI tekst
-        # Oprez: _apply_false_friends primjenjuje SVE iz _user_pairs,
-        # što uključuje i discourse markers (koji su EN regex).
-        # Ovo je greška u dizajnu, ali pošto su discourse markeri
-        # EN regex, neće se (uglavnom) primijeniti na HR tekst.
-        processed_text = self._apply_false_friends(translated_text, apply_discourse_markers=False)
-        
-        # Heuristika za 'your friend' -> prijatelj/prijateljica prema CSV matchu teksta
-        if src_text:
-            # Moramo normalizirati originalni EN tekst, ne "Pa, I don't know"
-            # Nemamo originalni EN tekst ovdje, što je problem.
-            # Za sada koristimo src_text kakav jest.
-            norm_src = self._normalize_eng(src_text) 
-            if norm_src and 'your friend' in norm_src:
-                speak_gender = self._csv_text_gender.get(norm_src)
-                if speak_gender == 'female':
-                    processed_text = self._apply_friend_female(processed_text)
-        return processed_text
+        processed = self._apply_false_friends(processed, apply_discourse_markers=False)
+            
+        return processed
 
     def _gemini_refine(self, src_text: str, draft_hr: str, info: Dict, neighbor_lines: List[str]) -> str:
         """Poziv Google Gemini API-ja za minimalno poliranje HR titla uz jasne upute."""

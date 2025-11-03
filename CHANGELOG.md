@@ -2,7 +2,10 @@
 
 Sve važnije promjene u projektu bit će dokumentirane u ovoj datoteci.
 
-## [Nadolazeće] - YYYY-MM-DD
+## [Nadolazeće] - 2025-11-03
+
+### Promijenjeno
+- Promijenjen model za prijevod s `Helsinki-NLP/opus-mt-en-zls` na `Helsinki-NLP/opus-mt-tc-base-en-sh` jer prethodni model nije bio zadovoljavajućeg kvalitete. Novi model pruža bolje rezultate u prijevodu s engleskog na hrvatski.
 
 ### Dodano
 - [ ] Dodati funkcionalnost za praćenje promjena u kodu

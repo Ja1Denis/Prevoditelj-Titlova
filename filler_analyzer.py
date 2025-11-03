@@ -8,7 +8,8 @@ import re
 import json
 from dotenv import load_dotenv
 from google import genai
-from google.genai import types
+from google.generativeai import types
+from google.generativeai.types import generation_types
 
 # =============================================================================
 # UČITAJ API KLJUČ IZ .ENV FILEA
@@ -21,7 +22,7 @@ load_dotenv()
 API_KEY = os.getenv("GOOGLE_API_KEY")
 
 if not API_KEY:
-    raise ValueError("❌ GEMINI_API_KEY nije pronađen u .env fileu!")
+    raise ValueError("❌ GOOGLE_API_KEY nije pronađen u .env fileu!")
 
 # Inicijaliziraj Gemini klijent
 genai.configure(api_key=API_KEY)
@@ -71,9 +72,18 @@ def read_srt_file(filepath):
 # GEMINI ANALIZA
 # =============================================================================
 
+# ISPRAVKA: Inicijalizacija modela izvan funkcije za bolju praksu
+try:
+    gemini_model = genai.GenerativeModel('gemini-1.5-flash-latest')
+except Exception as e:
+    print(f"⚠️  Nije moguće inicijalizirati Gemini model: {e}")
+    gemini_model = None
+
 def analyze_fillers_with_gemini(text, context=""):
     """Koristi gemini-1.5-flash za detekciju ispunjavača"""
-    
+    if not gemini_model:
+        return {"fillers_found": [], "total_count": 0, "analysis": "Greška: Gemini model nije inicijaliziran."}
+
     # Kreiraj formatiranu listu ispunjavača za prompt
     fillers_list = "\n".join([
         f"{category}: {', '.join(words)}"
@@ -116,27 +126,36 @@ VAŽNO:
 """
 
     try:
-        # Poziv Gemini API-ja
-        response = client.models.generate_content(
-            model='gemini-2.0-flash-exp',
+        # ISPRAVKA: Ispravan poziv Gemini API-ja
+        generation_config = types.GenerationConfig(
+            temperature=0.1,
+            max_output_tokens=2048,
+            response_mime_type="application/json" # Tražimo JSON direktno
+        )
+        response = gemini_model.generate_content(
             contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.1,
-                max_output_tokens=2048,
-            )
+            generation_config=generation_config
         )
         
         # Izvuci JSON iz odgovora
-        result_text = response.text.strip()
+        result_text = response.text
         
+        # ISPRAVKA: Pouzdanije parsiranje JSON-a
         # Ukloni markdown code blocks ako postoje
-        if result_text.startswith("```
-            result_text = result_text.split("```json").split("```
-        elif result_text.startswith("```"):
-            result_text = result_text.split("``````")[0].strip()
+        if result_text.strip().startswith("```"):
+            result_text = re.sub(r"```(json)?|```", "", result_text).strip()
         
         return json.loads(result_text)
         
+    except generation_types.StopCandidateException as e:
+        print(f"⚠️  Generiranje zaustavljeno: {e}")
+        # Pokušaj izvući djelomični JSON ako postoji
+        try:
+            partial_text = e.args[0].text
+            return json.loads(partial_text)
+        except (json.JSONDecodeError, IndexError):
+             return {"fillers_found": [], "total_count": 0, "analysis": f"Greška: Generiranje sadržaja zaustavljeno."}
+
     except Exception as e:
         print(f"⚠️  Greška u Gemini analizi: {e}")
         return {
@@ -159,13 +178,21 @@ def analyze_srt_file(filepath, output_file="filler_analysis.json", max_subtitles
     subtitles = parse_srt(srt_content)
     
     print(f"✅ Pronađeno {len(subtitles)} titlova")
-    print(f"🤖 Analiziram prvih {max_subtitles} s Gemini 2.5 Flash...\n")
+    
+    if not gemini_model:
+        print("❌ Preskačem analizu jer Gemini model nije dostupan.")
+        return
+
+    print(f"🤖 Analiziram prvih {max_subtitles} s Gemini...\n")
     
     results = []
     total_fillers = 0
     
-    for i, subtitle in enumerate(subtitles[:max_subtitles], 1):
-        print(f"[{i}/{max_subtitles}] Analiziram: {subtitle['text'][:50]}...")
+    # Ograniči broj titlova ako je veći od postojećih
+    subtitles_to_analyze = subtitles[:min(max_subtitles, len(subtitles))]
+    
+    for i, subtitle in enumerate(subtitles_to_analyze, 1):
+        print(f"[{i}/{len(subtitles_to_analyze)}] Analiziram: {subtitle['text'][:50]}...")
         
         # Uzmi kontekst (prethodni i sljedeći titl)
         context = ""
@@ -176,7 +203,7 @@ def analyze_srt_file(filepath, output_file="filler_analysis.json", max_subtitles
         
         analysis = analyze_fillers_with_gemini(subtitle['text'], context)
         
-        if analysis['total_count'] > 0:
+        if analysis and analysis.get('total_count', 0) > 0:
             results.append({
                 'subtitle_index': subtitle['index'],
                 'timecode': f"{subtitle['start']} --> {subtitle['end']}",
@@ -191,7 +218,7 @@ def analyze_srt_file(filepath, output_file="filler_analysis.json", max_subtitles
     # Spremi rezultate
     output = {
         'summary': {
-            'total_subtitles_analyzed': max_subtitles,
+            'total_subtitles_analyzed': len(subtitles_to_analyze),
             'subtitles_with_fillers': len(results),
             'total_fillers_found': total_fillers
         },
@@ -213,16 +240,21 @@ def analyze_srt_file(filepath, output_file="filler_analysis.json", max_subtitles
 
 if __name__ == "__main__":
     # Primjer uporabe
-    SRT_FILE = "Emmanuelle.2024.1080p.WEBRip.x264.AAC5.1-LAMA.hr.srt"
-    
+    # Napomena: Potrebno je kreirati dummy SRT file za testiranje
+    SRT_FILE = "example.srt"
+    if not os.path.exists(SRT_FILE):
+        with open(SRT_FILE, "w", encoding="utf-8") as f:
+            f.write("1\n00:00:01,000 --> 00:00:03,000\nPa, znači, mislim da je to dobro.\n\n")
+            f.write("2\n00:00:04,000 --> 00:00:06,000\nOvo je rečenica bez ispunjavača.\n")
+
     try:
         results = analyze_srt_file(SRT_FILE, max_subtitles=20)
         
         # Ispiši primjer rezultata
-        print("\n" + "="*60)
-        print("PRIMJER REZULTATA:")
-        print("="*60)
-        if results['results']:
+        if results and results.get('results'):
+            print("\n" + "="*60)
+            print("PRIMJER REZULTATA:")
+            print("="*60)
             example = results['results'][0]
             print(f"\nTitl #{example['subtitle_index']}")
             print(f"Vrijeme: {example['timecode']}")
