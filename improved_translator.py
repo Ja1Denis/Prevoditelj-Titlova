@@ -168,7 +168,7 @@ class GenderAnalyzer:
 class ImprovedSubtitleTranslator:
     """Glavna klasa za prevođenje titlova."""
     
-    def __init__(self, model_name="Helsinki-NLP/opus-mt-tc-base-en-sh", metadata_csv: Optional[str] = None, user_dict_path: Optional[str] = None):
+    def __init__(self, model_name="Helsinki-NLP/opus-mt-tc-base-en-sh", metadata_csv: Optional[str] = None, user_dict_path: Optional[str] = None, progress_callback=None):
         self.tokenizer = MarianTokenizer.from_pretrained(model_name)
         self.model = MarianMTModel.from_pretrained(model_name)
         self.gender_analyzer = GenderAnalyzer()
@@ -178,6 +178,7 @@ class ImprovedSubtitleTranslator:
         self._csv_text_gender: Dict[str, str] = {}  # normalizirani eng. tekst -> gender govornika
         self._name_gender_map: Dict[str, str] = {}
         self._user_pairs: List[Tuple[re.Pattern, str, int]] = []  # (pattern, replacement, priority)
+        self.progress_callback = progress_callback
         
         # Učitaj discourse markers UVIJEK (prije user dict)
         self._load_discourse_markers()
@@ -415,10 +416,16 @@ class ImprovedSubtitleTranslator:
         # Grupiraj titlove u batch-e za prevođenje
         batch_size = 3
         translated_count = 0
+        total_to_translate = len(subtitles_to_translate)
         
         for i in range(0, len(subtitles_to_translate), batch_size):
             batch_end = min(i + batch_size, len(subtitles_to_translate))
             batch = subtitles_to_translate[i:batch_end]
+            
+            # Ažuriraj napredak
+            if self.progress_callback and total_to_translate > 0:
+                progress = (i + len(batch)) / total_to_translate
+                self.progress_callback(progress)
             
             print(f"\n🔄 Prevođenje grupe {i//batch_size + 1} (titlovi {i+1}-{batch_end})...")
             
@@ -434,9 +441,15 @@ class ImprovedSubtitleTranslator:
             
             translated_count += len(batch)
             
-            if translated_count % 25 == 0:
-                print(f"   Prevedeno {translated_count}/{len(subtitles_to_translate)}...")
+            if translated_count % 25 == 0 or translated_count == total_to_translate:
+                print(f"   Prevedeno {translated_count}/{total_to_translate}...")
         
+        # Ako nije bilo titlova za prevođenje, samo spremi izvorni tekst
+        if total_to_translate == 0:
+            print("Nema novih titlova za prevođenje, samo se vrši obrada...")
+            if self.progress_callback:
+                self.progress_callback(1.0)
+                
         # Ažuriraj sve prevedene titlove u glavnoj listi
         translated_idx = 0
         for i, sub in enumerate(subtitles):
@@ -2300,6 +2313,16 @@ class SubtitleTranslatorApp:
         )
         self.progress.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 10))
         
+        # Label za prikaz postotka
+        self.percentage_var = tk.StringVar(value="0%")
+        percentage_label = ttk.Label(
+            status_frame,
+            textvariable=self.percentage_var,
+            width=5,
+            anchor=tk.CENTER
+        )
+        percentage_label.pack(side=tk.LEFT, padx=(0, 10))
+        
         self.status_var = tk.StringVar(value="Spreman za prevođenje")
         status_label = ttk.Label(
             status_frame, 
@@ -2779,43 +2802,63 @@ Koristi napredne tehnike obrade prirodnog jezika za preciznije prevođenje.
     
     def update_progress(self, progress, is_batch=False, current_file=None, total_files=None):
         """Ažurira statusnu traku s postotkom i procijenjenim preostalim vremenom."""
-        current_time = time.time()
-        
-        if self.start_time is None:
-            self.start_time = current_time
-            self.last_update_time = current_time
-            self.last_progress = 0
-            self.estimated_total_time = 0
-        
-        elapsed = current_time - self.start_time
-        
-        # Izračunaj brzinu i procijenjeno preostalo vrijeme
-        if progress > self.last_progress and current_time > self.last_update_time:
-            time_delta = current_time - self.last_update_time
-            progress_delta = progress - self.last_progress
+        try:
+            current_time = time.time()
             
-            speed = progress_delta / time_delta  # % po sekundi
+            # Inicijaliziraj početno vrijeme ako je potrebno
+            if self.start_time is None:
+                self.start_time = current_time
             
-            if speed > 0:
-                remaining_progress = 100 - progress
-                remaining_time = remaining_progress / speed
-                self.estimated_total_time = elapsed + remaining_time
-                time_str = self.format_time(remaining_time)
+            # Osiguraj da je progress između 0 i 1
+            progress = float(progress)
+            if progress > 1:  # Ako je veći od 1, pretvori u decimalni zapis
+                progress = progress / 100.0
+            progress = max(0.0, min(1.0, progress))  # Ograniči između 0 i 1
+            
+            # Izračunaj proteklo vrijeme
+            elapsed = current_time - self.start_time
+            
+            # Ažuriraj postotak i status svakih 0.5 sekundi ili ako je promjena veća od 5%
+            if (self.last_update_time is None or 
+                (current_time - self.last_update_time) >= 0.5 or 
+                abs(progress - self.last_progress) > 0.05 or
+                progress >= 1.0):
                 
-                if is_batch:
-                    status_text = f"Prevođenje {current_file}/{total_files}: {progress:.1f}% (Preostalo: {time_str})"
-                else:
-                    status_text = f"Prevođenje: {progress:.1f}% (Preostalo: {time_str})"
+                progress_percent = int(progress * 100)
+                self.progress_var.set(progress_percent)
+                self.percentage_var.set(f"{progress_percent}%")
+                self.last_update_time = current_time
                 
-                self.root.after(0, self.status_var.set, status_text)
-        
-        elif progress == 0 and elapsed > 1:
-            self.root.after(0, self.status_var.set, f"Prevođenje... (Proteklo: {self.format_time(elapsed)})")
+                # Ako je u tijeku prevođenje, izračunaj procijenjeno vrijeme
+                if 0 < progress < 1:
+                    estimated_total = elapsed / progress if progress > 0 else 0
+                    remaining = max(0, estimated_total - elapsed)
+                    
+                    if is_batch and current_file is not None and total_files is not None:
+                        self.status_var.set(
+                            f"Prevođenje datoteke {current_file} od {total_files} • "
+                            f"{progress_percent}% • Preostalo: {self.format_time(remaining)}"
+                        )
+                    else:
+                        self.status_var.set(
+                            f"Prevođenje u tijeku • "
+                            f"{progress_percent}% • Preostalo: {self.format_time(remaining)}"
+                        )
+                elif progress == 0 and elapsed > 1:
+                    self.status_var.set(f"Priprema... (Proteklo: {self.format_time(elapsed)})")
+                elif progress >= 1:
+                    self.status_var.set("Prevođenje gotovo!")
+                
+                # Ažuriraj prozor da se odmah vidi promjena
+                self.root.update_idletasks()
             
-        self.root.after(0, self.progress_var.set, progress)
-        
-        self.last_update_time = current_time
-        self.last_progress = progress
+            # Spremi trenutno stanje
+            self.last_progress = progress
+            
+        except Exception as e:
+            print(f"Greška pri ažuriranju statusa: {e}")
+            import traceback
+            traceback.print_exc()
 
     def run_translation(self, input_file, output_file):
         """Pokreće prevođenje jedne datoteke."""
@@ -2837,31 +2880,36 @@ Koristi napredne tehnike obrade prirodnog jezika za preciznije prevođenje.
                     self.root.after(0, self.reset_ui_after_translation)
                     return
             
-            self.start_time = None
+            # Inicijaliziraj vrijednosti za praćenje napretka
+            self.start_time = time.time()
             self.last_progress = 0
+            self.progress_var.set(0)
+            self.percentage_var.set("0%")
             self.progress.configure(mode='determinate')
             
             metadata_csv = self.metadata_csv_path.get().strip()
             user_dict_path = self.user_dict_path.get().strip()
             
+            # Definiraj callback funkciju za ažuriranje napretka
+            def update_progress_callback(progress):
+                # Koristimo after za sigurno ažuriranje GUI-a iz druge dretve
+                self.root.after(0, self.update_progress, progress, False)
+            
             translator = ImprovedSubtitleTranslator(
                 metadata_csv=metadata_csv if metadata_csv else None,
-                user_dict_path=user_dict_path if user_dict_path else None
+                user_dict_path=user_dict_path if user_dict_path else None,
+                progress_callback=update_progress_callback
             )
             translator._gem_enabled = self.gemini_enabled.get()
             
-            # Ovdje bi trebala biti logika za update progress-a ako translator to podržava
-            # Za sada, simuliramo neodređeni progress za single file
-            self.progress.configure(mode='indeterminate')
-            self.progress.start(10)
+            # Pokreni prevođenje
+            result = translator.translate_file(input_file, output_file)
             
-            translator.translate_file(input_file, output_file)
-            
-            self.progress.stop()
-            self.progress.configure(mode='determinate')
-            self.progress_var.set(100)
-            
-            self.root.after(0, self.on_translation_success)
+            # Ažuriraj GUI nakon završetka
+            if result:
+                self.root.after(0, self.on_translation_success)
+            else:
+                self.root.after(0, lambda: self.on_translation_error("Prevođenje nije uspjelo"))
             
         except Exception as e:
             self.root.after(0, self.on_translation_error, str(e))
@@ -2901,7 +2949,7 @@ Koristi napredne tehnike obrade prirodnog jezika za preciznije prevođenje.
                 output_file = os.path.join(output_dir, f"{Path(srt_file).stem}_hr.srt")
                 
                 # Izračunaj napredak
-                progress = ((i + 1) / total_files) * 100
+                progress = (i + 1) / total_files  # Vrijednost između 0 i 1
                 
                 # Ažuriraj GUI
                 self.root.after(0, lambda p=progress, i=i, t=total_files: self.update_progress(

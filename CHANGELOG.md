@@ -4,6 +4,15 @@ Sve važnije promjene u projektu bit će dokumentirane u ovoj datoteci.
 
 ## [Nadolazeće] - 2025-11-03
 
+### Popravljeno
+- **Poboljšano praćenje napretka prevođenja** - Dodana je potpuna podrška za praćenje napretka tokom prevođenja, uključujući:
+  - Realno ažuriranje postotka napretka u korisničkom sučelju
+  - Prikaz preostalog vremena za završetak prevođenja
+  - Praćenje napretka i za pojedinačne datoteke i za batch prevođenje
+  - Poboljšana responzivnost korisničkog sučelja tokom dugotrajnih operacija
+
+## [1.0.1] - 2025-11-03
+
 ### Promijenjeno
 - Promijenjen model za prijevod s `Helsinki-NLP/opus-mt-en-zls` na `Helsinki-NLP/opus-mt-tc-base-en-sh` jer prethodni model nije bio zadovoljavajućeg kvalitete. Novi model pruža bolje rezultate u prijevodu s engleskog na hrvatski.
 - Dodan je eksplicitan prefiks `>>hrv<<` za svaki tekst prije prevođenja kako bi se osiguralo da model uvijek prevodi na hrvatski jezik, čime se sprječava mogućnost miješanja srodnih jezika (npr. srpski).
