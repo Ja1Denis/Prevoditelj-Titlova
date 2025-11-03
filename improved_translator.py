@@ -2162,7 +2162,7 @@ class SubtitleTranslatorApp:
     
     def __init__(self, root):
         self.root = root
-        self.root.title("Sinkronizator titlova")
+        self.root.title("Prevoditelj, Uređivač i Sinkronizator titlova")
         self.root.geometry("800x550")
         self.root.minsize(750, 500)
         
@@ -2173,6 +2173,11 @@ class SubtitleTranslatorApp:
         self.estimated_total_time = 0
         self.current_file_index = 0
         self.total_files = 1
+        
+        # Varijable za sinkronizaciju titlova
+        self.sync_mode = tk.BooleanVar(value=False)
+        self.reference_srt_path = tk.StringVar()
+        self.text_srt_path = tk.StringVar()
         
         # Postavi ikonu aplikacije ako postoji
         try:
@@ -2207,15 +2212,41 @@ class SubtitleTranslatorApp:
         options_frame = ttk.Frame(settings_frame)
         options_frame.pack(fill=tk.X, pady=5)
         
+        # Red s opcijama - prvi red
+        options_frame1 = ttk.Frame(settings_frame)
+        options_frame1.pack(fill=tk.X, pady=5)
+        
         # Batch mod
         self.batch_mode = tk.BooleanVar(value=False)
         self.batch_cb = ttk.Checkbutton(
-            options_frame, 
+            options_frame1, 
             text="Batch mod (obradi sve .srt u mapi)",
             variable=self.batch_mode,
             command=self.toggle_batch_mode
         )
         self.batch_cb.pack(side=tk.LEFT, padx=5)
+        
+        # Sync mod
+        self.sync_cb = ttk.Checkbutton(
+            options_frame1,
+            text="Sinkroniziraj bez prijevoda (oba fajla na HR)",
+            variable=self.sync_mode,
+            command=self.toggle_sync_mode
+        )
+        self.sync_cb.pack(side=tk.LEFT, padx=5)
+        
+        # Drugi red opcija
+        options_frame2 = ttk.Frame(settings_frame)
+        options_frame2.pack(fill=tk.X, pady=5)
+        
+        # Gemini opcija
+        self.gemini_enabled = tk.BooleanVar(value=False)
+        self.gemini_cb = ttk.Checkbutton(
+            options_frame2, 
+            text="Koristi Gemini za poboljšanje prijevoda",
+            variable=self.gemini_enabled
+        )
+        self.gemini_cb.pack(side=tk.LEFT, padx=5)
         
         # Gemini opcija
         self.gemini_enabled = tk.BooleanVar(value=False)
@@ -2262,6 +2293,36 @@ class SubtitleTranslatorApp:
             1,
             self.batch_mode.get()
         )
+        
+        # Okvir za sinkronizaciju (sakriven po defaultu)
+        self.sync_frame = ttk.LabelFrame(main_frame, text=" Sinkronizacija titlova ", padding=10)
+        
+        # Unutarnji okvir za sinkronizaciju
+        inner_sync_frame = ttk.Frame(self.sync_frame)
+        inner_sync_frame.pack(fill=tk.X, expand=True, pady=5)
+        
+        # Referentni SRT s točnim vremenima
+        ttk.Label(inner_sync_frame, text="Referentni SRT (točna vremena):").pack(anchor=tk.W, pady=2)
+        ref_frame = ttk.Frame(inner_sync_frame)
+        ref_frame.pack(fill=tk.X, pady=2)
+        ttk.Entry(ref_frame, textvariable=self.reference_srt_path, width=60).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 5))
+        ttk.Button(ref_frame, text="Odaberi...", command=self.browse_reference_srt).pack(side=tk.RIGHT)
+        
+        # SRT s točnim tekstom
+        ttk.Label(inner_sync_frame, text="SRT s točnim tekstom (netočna vremena):").pack(anchor=tk.W, pady=2)
+        text_frame = ttk.Frame(inner_sync_frame)
+        text_frame.pack(fill=tk.X, pady=2)
+        ttk.Entry(text_frame, textvariable=self.text_srt_path, width=60).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 5))
+        ttk.Button(text_frame, text="Odaberi...", command=self.browse_text_srt).pack(side=tk.RIGHT)
+        
+        # Gumb za sinkronizaciju
+        self.sync_btn = ttk.Button(
+            inner_sync_frame,
+            text="Sinkroniziraj titlove",
+            command=self.sync_subtitles,
+            style='Accent.TButton'
+        )
+        self.sync_btn.pack(pady=(10, 5))
         
         # Dodatne opcije (sakrivene po defaultu)
         self.advanced_frame = ttk.LabelFrame(main_frame, text=" Dodatne opcije ", padding=10)
@@ -2618,18 +2679,84 @@ Koristi napredne tehnike obrade prirodnog jezika za preciznije prevođenje.
     def browse_input(self):
         """Otvara dijalog za odabir ulazne datoteke ili mape."""
         if self.batch_mode.get():
-            path = filedialog.askdirectory(title="Odaberi folder s SRT datotekama")
-        else:
-            path = filedialog.askopenfilename(
-                title="Odaberite .srt datoteku",
-                filetypes=[
-                    ("Subtitle files", "*.srt"),
-                    ("All files", "*.*")
-                ]
+            # Ako je batch mod, otvori dijalog za odabir mape
+            dir_path = filedialog.askdirectory(
+                title="Odaberite mapu s .srt datotekama"
             )
-            
+            if dir_path:
+                self.input_path.set(dir_path)
+                # Predloži izlaznu mapu
+                if not self.output_path.get():
+                    self.output_path.set(os.path.join(dir_path, "prevedeno"))
+        else:
+            # Inače otvori dijalog za odabir datoteke
+            file_path = filedialog.askopenfilename(
+                title="Odaberite ulaznu .srt datoteku",
+                filetypes=[("SRT datoteke", "*.srt"), ("Sve datoteke", "*.*")]
+            )
+            if file_path:
+                self.input_path.set(file_path)
+                # Predloži izlaznu datoteku
+                if not self.output_path.get():
+                    base_name = os.path.splitext(os.path.basename(file_path))[0]
+                    output_file = f"{base_name}_prevedeno.srt"
+                    self.output_path.set(os.path.join(os.path.dirname(file_path), output_file))
+
+    def browse_reference_srt(self):
+        """Otvara dijalog za odabir referentnog SRT-a s točnim vremenima."""
+        file_path = filedialog.askopenfilename(
+            title="Odaberite referentni SRT s točnim vremenima",
+            filetypes=[("SRT datoteke", "*.srt"), ("Sve datoteke", "*.*")]
+        )
+        if file_path:
+            self.reference_srt_path.set(file_path)
+            # Ako još nije postavljen izlazni put, predloži izlaznu datoteku
+            if not self.output_path.get() and self.text_srt_path.get():
+                base_name = os.path.splitext(os.path.basename(self.text_srt_path.get()))[0]
+                output_file = f"{base_name}_sinkronizirano.srt"
+                self.output_path.set(os.path.join(os.path.dirname(file_path), output_file))
+
+    def browse_text_srt(self):
+        """Otvara dijalog za odabir SRT-a s točnim tekstom."""
+        path = filedialog.askopenfilename(
+            title="Odaberite SRT s točnim tekstom (netočna vremena)",
+            filetypes=[("SRT datoteke", "*.srt"), ("Sve datoteke", "*.*")]
+        )
         if path:
-            self.input_path.set(path)
+            self.text_srt_path.set(path)
+            
+    def browse_csv(self):
+        """Otvara dijalog za odabir CSV datoteke s metapodacima."""
+        path = filedialog.askopenfilename(
+            title="Odaberite CSV datoteku s metapodacima",
+            filetypes=[("CSV datoteke", "*.csv"), ("Sve datoteke", "*.*")]
+        )
+        if path:
+            self.metadata_csv_path.set(path)
+            
+    def browse_user_dict(self):
+        """Otvara dijalog za odabir korisničkog rječnika."""
+        path = filedialog.askopenfilename(
+            title="Odaberite datoteku s korisničkim rječnikom",
+            filetypes=[("Tekstualne datoteke", "*.txt"), ("Sve datoteke", "*.*")]
+        )
+        if path:
+            self.user_dict_path.set(path)
+
+    def browse_output(self):
+        """Otvara dijalog za odabir izlazne datoteke/mape."""
+        if self.batch_mode.get() and not self.sync_mode.get():
+            path = filedialog.askdirectory(title="Odaberite izlaznu mapu")
+        else:
+            default_file = "sinkronizirano.srt" if self.sync_mode.get() else "prevedeno.srt"
+            path = filedialog.asksaveasfilename(
+                title="Spremi datoteku kao...",
+                defaultextension=".srt",
+                initialfile=default_file,
+                filetypes=[("SRT datoteke", "*.srt"), ("Sve datoteke", "*.*")]
+            )
+        if path:
+            self.output_path.set(path)
             # Ako nije postavljen izlaz, postavi automatski
             if not self.output_path.get():
                 if self.batch_mode.get():
@@ -2638,85 +2765,294 @@ Koristi napredne tehnike obrade prirodnog jezika za preciznije prevođenje.
                     base, ext = os.path.splitext(path)
                     self.output_path.set(f"{base}_hr{ext}")
     
-    def browse_output(self):
-        """Otvara dijalog za odabir izlazne datoteke ili mape."""
-        if self.batch_mode.get():
-            path = filedialog.askdirectory(
-                title="Odaberite izlaznu mapu",
-                mustexist=False # Dozvoli kreiranje nove mape
-            )
-        else:
-            default_name = ""
-            if self.input_path.get():
-                base, ext = os.path.splitext(self.input_path.get())
-                default_name = f"{base}_hr{ext if ext else '.srt'}"
+    def _normalize_text(self, text):
+        """Normalizira tekst za bolje uspoređivanje."""
+        import re
+        # Ukloni interpunkciju i pretvori u mala slova
+        text = re.sub(r'[^\w\s]', '', text.lower())
+        # Zamijeni višestruke razmake s jednim
+        text = re.sub(r'\s+', ' ', text).strip()
+        return text
+
+    def _calculate_similarity(self, text1, text2):
+        """Izračunava sličnost između dva teksta."""
+        from difflib import SequenceMatcher
+        
+        # Ako je jedan od tekstova prazan, vrati 0
+        if not text1 or not text2:
+            return 0.0
+            
+        # Normaliziraj tekstove
+        text1 = self._normalize_text(text1)
+        text2 = self._normalize_text(text2)
+        
+        # Ako su oba teksta prazna nakon normalizacije, vrati 0
+        if not text1 and not text2:
+            return 0.0
+            
+        # Izračunaj sličnost
+        return SequenceMatcher(None, text1, text2).ratio()
+
+    def _find_best_match(self, text_subs, ref_subs, start_ref_idx=0, min_ratio=0.4):
+        """
+        Pronalazi najbolje podudaranje između dva niza titlova.
+        Vraća tuple (best_ref_idx, best_text_idx, best_ratio)
+        """
+        # Pronađi prvi ne-prazni titl u oba niza
+        text_start_idx = 0
+        while text_start_idx < len(text_subs) and not text_subs[text_start_idx]['text'].strip():
+            text_start_idx += 1
+            
+        if text_start_idx >= len(text_subs) or start_ref_idx >= len(ref_subs):
+            return 0, 0, 0.0
+        
+        # Uzmi prvi ne-prazni tekst iz oba niza
+        text_to_match = text_subs[text_start_idx]['text']
+        
+        # Ako nema što uspoređivati, vrati prve indekse
+        if not text_to_match.strip():
+            return start_ref_idx, text_start_idx, 0.0
+        
+        # Inicijaliziraj varijable za najbolje podudaranje
+        best_ratio = min_ratio
+        best_ref_idx = start_ref_idx
+        best_text_idx = text_start_idx
+        
+        # Tražimo najbolje podudaranje u referentnom SRT-u
+        # Ograničimo pretragu na sljedećih 100 titlova radi performansi
+        search_limit = min(start_ref_idx + 100, len(ref_subs))
+        
+        for ref_idx in range(start_ref_idx, search_limit):
+            ref_text = ref_subs[ref_idx]['text']
+            
+            # Preskoči prazne titlove
+            if not ref_text.strip():
+                continue
                 
-            path = filedialog.asksaveasfilename(
-                title="Spremi prevedenu datoteku kao",
-                defaultextension=".srt",
-                initialfile=os.path.basename(default_name) if default_name else "",
-                initialdir=os.path.dirname(default_name) if default_name else "",
-                filetypes=[
-                    ("Subtitle files", "*.srt"),
-                    ("All files", "*.*")
-                ]
+            # Izračunaj sličnost između tekstova
+            ratio = self._calculate_similarity(text_to_match, ref_text)
+            
+            # Ako je pronađeno bolje podudaranje, ažuriraj
+            if ratio > best_ratio:
+                best_ratio = ratio
+                best_ref_idx = ref_idx
+                best_text_idx = text_start_idx
+                
+                # Ako je pronađeno odlično podudaranje, zaustavi pretragu
+                if ratio > 0.8:  # Smanjen prag za raniji izlazak
+                    break
+        
+        # Ako je pronađeno dobro podudaranje, vrati rezultat
+        if best_ratio >= min_ratio:
+            return best_ref_idx, best_text_idx, best_ratio
+            
+        # Inače, vrati prve indekse
+        return start_ref_idx, text_start_idx, 0.0
+        
+    def _add_intro_credits(self, subtitles):
+        """Dodaje uvodne kredite na početak titlova."""
+        intro_credits = [
+            {
+                'index': 1,
+                'start': '00:00:00,000',
+                'end': '00:00:05,000',
+                'text': 'Titlovi su sinkronizirani pomoću aplikacije:'
+            },
+            {
+                'index': 2,
+                'start': '00:00:05,000',
+                'end': '00:00:10,000',
+                'text': 'Prevoditelj, Uređivač i Sinkronizator titlova'
+            },
+            {
+                'index': 3,
+                'start': '00:00:10,000',
+                'end': '00:00:15,000',
+                'text': 'Autor: Denis Sakač'
+            }
+        ]
+        
+        # Pomiči sve postojeće titlove za 15 sekundi
+        for sub in subtitles:
+            # Konvertiraj vremenske oznake u milisekunde
+            def time_to_ms(time_str):
+                h, m, s = time_str.split(':')
+                s, ms = s.split(',')
+                return int(h)*3600000 + int(m)*60000 + int(s)*1000 + int(ms)
+            
+            def ms_to_time(ms):
+                h = ms // 3600000
+                ms %= 3600000
+                m = ms // 60000
+                ms %= 60000
+                s = ms // 1000
+                ms %= 1000
+                return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
+            
+            # Pomiči vremena za 15 sekundi (15000 ms)
+            start_ms = time_to_ms(sub['start']) + 15000
+            end_ms = time_to_ms(sub['end']) + 15000
+            
+            # Ažuriraj vremena
+            sub['start'] = ms_to_time(start_ms)
+            sub['end'] = ms_to_time(end_ms)
+            sub['timestamp'] = f"{sub['start']} --> {sub['end']}"
+        
+        # Kombiniraj uvodne kredite s pomaknutim titlovima
+        return intro_credits + subtitles
+    
+    def sync_subtitles(self):
+        """Pokreće proces sinkronizacije titlova."""
+        # Provjeri jesu li uneseni svi potrebni podaci
+        if not self.reference_srt_path.get() or not self.text_srt_path.get():
+            messagebox.showerror("Greška", "Molimo odaberite obje SRT datoteke za sinkronizaciju!")
+            return
+            
+        if not self.output_path.get():
+            # Postavi zadani izlazni naziv ako nije postavljen
+            default_output = os.path.splitext(self.text_srt_path.get())[0] + "_sinkronizirano.srt"
+            self.output_path.set(default_output)
+        
+        try:
+            # Učitaj referentni SRT (točna vremena)
+            with open(self.reference_srt_path.get(), 'r', encoding='utf-8') as f:
+                ref_content = f.read()
+                
+            # Učitaj SRT s točnim tekstom
+            with open(self.text_srt_path.get(), 'r', encoding='utf-8') as f:
+                text_content = f.read()
+                
+            # Parsiraj SRT datoteke
+            ref_subs = self._parse_srt_content(ref_content)
+            text_subs = self._parse_srt_content(text_content)
+            
+            # Pronađi najbolje podudaranje između dva niza titlova
+            ref_start_idx, text_start_idx, match_ratio = self._find_best_match(text_subs, ref_subs)
+            
+            # Ako podudaranje nije dovoljno dobro, prikaži upozorenje
+            if match_ratio < 0.5:  # Smanjen prag za upozorenje
+                ref_text = ref_subs[ref_start_idx]['text'][:100] + ('...' if len(ref_subs[ref_start_idx]['text']) > 100 else '')
+                text_text = text_subs[text_start_idx]['text'][:100] + ('...' if len(text_subs[text_start_idx]['text']) > 100 else '')
+                
+                # Prikaži detaljnije informacije o podudaranju
+                details = (
+                    f"Nije pronađeno dobro podudaranje između datoteka.\n\n"
+                    f"Referentni SRT (indeks {ref_start_idx + 1}):\n'{ref_text}'\n\n"
+                    f"SRT s tekstom (indeks {text_start_idx + 1}):\n'{text_text}'\n\n"
+                    f"Točnost podudaranja: {match_ratio*100:.1f}%\n\n"
+                    "Želite li ipak nastaviti?"
+                )
+                
+                if not messagebox.askyesno("Upozorenje", details):
+                    return
+            else:
+                # Ako je podudaranje prihvatljivo, prikaži informaciju
+                ref_text = ref_subs[ref_start_idx]['text'][:50] + ('...' if len(ref_subs[ref_start_idx]['text']) > 50 else '')
+                text_text = text_subs[text_start_idx]['text'][:50] + ('...' if len(text_subs[text_start_idx]['text']) > 50 else '')
+                print(f"Pronađeno podudaranje s točnošću {match_ratio*100:.1f}%:")
+                print(f"  Referentni: {ref_text}")
+                print(f"  S tekstom:  {text_text}")
+            
+            # Kreiraj sinkronizirane titlove
+            synced_subs = []
+            ref_idx = ref_start_idx
+            text_idx = text_start_idx
+            
+            # Prvo dodaj uvodne kredite
+            synced_subs = self._add_intro_credits(synced_subs)
+            
+            # Zatim dodaj sinkronizirane titlove
+            while ref_idx < len(ref_subs) and text_idx < len(text_subs):
+                # Kopiraj sve podatke iz referentnog titla
+                synced_sub = ref_subs[ref_idx].copy()
+                # Zamijeni samo tekst iz drugog SRT-a
+                synced_sub['text'] = text_subs[text_idx]['text']
+                # Dodaj u listu sinkroniziranih titlova
+                synced_subs.append(synced_sub)
+                
+                ref_idx += 1
+                text_idx += 1
+            
+            # Ažuriraj indekse svih titlova
+            for i, sub in enumerate(synced_subs, 1):
+                sub['index'] = i
+            
+            # Spremi sinkronizirane titlove
+            self._write_srt(synced_subs, self.output_path.get())
+            
+            messagebox.showinfo(
+                "Uspjeh", 
+                f"Titlovi su uspješno sinkronizirani i spremljeni u:\n{self.output_path.get()}\n\n"
+                f"Dodano {len(synced_subs)} titlova (uključujući uvodne kredite)."
             )
-        
-        if path:
-            self.output_path.set(path)
-    
-    def browse_csv(self):
-        """Otvara dijalog za odabir CSV datoteke s metapodacima."""
-        initial_dir = ""
-        if self.input_path.get():
-            initial_dir = os.path.dirname(self.input_path.get())
             
-        path = filedialog.askopenfilename(
-            title="Odaberite CSV datoteku s metapodacima",
-            initialdir=initial_dir,
-            filetypes=[
-                ("CSV files", "*.csv"),
-                ("All files", "*.*")
-            ]
-        )
-        
-        if path:
-            self.metadata_csv_path.set(path)
+        except Exception as e:
+            messagebox.showerror("Greška", f"Došlo je do greške prilikom sinkronizacije:\n{str(e)}")
+            import traceback
+            traceback.print_exc()
     
-    def browse_user_dict(self):
-        """Otvara dijalog za odabir korisničkog rječnika."""
-        initial_dir = ""
-        if self.input_path.get():
-            initial_dir = os.path.dirname(self.input_path.get())
-            
-        path = filedialog.askopenfilename(
-            title="Odaberite datoteku s korisničkim rječnikom",
-            initialdir=initial_dir,
-            filetypes=[
-                ("Text files", "*.txt;*.csv"),
-                ("All files", "*.*")
-            ]
-        )
+    def _write_srt(self, subtitles, output_path):
+        """Zapisuje listu titlova u SRT formatu."""
+        with open(output_path, 'w', encoding='utf-8') as f:
+            for sub in subtitles:
+                f.write(f"{sub['index']}\n")
+                f.write(f"{sub['start']} --> {sub['end']}\n")
+                f.write(f"{sub['text']}\n\n")
+    
+    def _parse_srt_content(self, content):
+        """Parsira sadržaj SRT datoteke i vraća listu rječnika s podacima o titlovima."""
+        # Podijeli na blokove (prazni redovi razdvajaju blokove)
+        blocks = re.split(r'\n\s*\n', content.strip())
+        subs = []
         
-        if path:
-            self.user_dict_path.set(path)
+        for block in blocks:
+            lines = [line.strip() for line in block.split('\n') if line.strip()]
+            if len(lines) < 2:
+                continue
+                
+            # Prva linija je broj, druga su vremena, ostalo je tekst
+            try:
+                idx = int(lines[0])
+                timestamp = lines[1]
+                text = '\n'.join(lines[2:])
+                
+                # Parsiraj vremensku oznaku
+                time_parts = re.split(r'\s*-->\s*', timestamp)
+                if len(time_parts) != 2:
+                    continue
+                    
+                start_time, end_time = time_parts
+                
+                subs.append({
+                    'index': idx,
+                    'timestamp': timestamp,
+                    'start': start_time,
+                    'end': end_time,
+                    'text': text
+                })
+            except (ValueError, IndexError):
+                continue
+                
+        return subs
     
     def start_translation(self):
         """Pokreće proces prevođenja."""
-        input_path = self.input_path.get().strip()
-        output_path = self.output_path.get().strip()
-        
-        # Validacija unosa
-        if not input_path:
-            messagebox.showerror("Greška", "Molimo odaberite ulaznu datoteku ili mapu!")
+        # Ako je uključena sinkronizacija, koristi sinkronizacijsku funkciju
+        if self.sync_mode.get():
+            self.sync_subtitles()
+            return
+            
+        # Inače nastavi s normalnim prevođenjem
+        if not self.input_path.get():
+            messagebox.showerror("Greška", "Molimo odaberite ulaznu datoteku/mapu!")
+            return
+            
+        if not self.output_path.get():
+            messagebox.showerror("Greška", "Molimo odaberite izlaznu datoteku/mapu!")
             return
             
         if not os.path.exists(input_path):
             messagebox.showerror("Greška", f"Odabrana datoteka/mapa ne postoji:\n{input_path}")
-            return
-            
-        if not output_path:
-            messagebox.showerror("Greška", "Molimo odredite izlaznu datoteku ili mapu!")
             return
             
         # Ako je batch mod, provjeri izlaznu mapu
@@ -2789,211 +3125,53 @@ Koristi napredne tehnike obrade prirodnog jezika za preciznije prevođenje.
         except Exception as e:
             self.on_translation_error(str(e))
     
-    def format_time(self, seconds):
-        """Formatira sekunde u čitljiv vremenski format."""
-        if seconds < 60:
-            return f"{int(seconds)}s"
-        elif seconds < 3600:
-            return f"{int(seconds // 60)}m {int(seconds % 60)}s"
-        else:
-            hours = int(seconds // 3600)
-            minutes = int((seconds % 3600) // 60)
-            return f"{hours}h {minutes}m"
-    
-    def update_progress(self, progress, is_batch=False, current_file=None, total_files=None):
-        """Ažurira statusnu traku s postotkom i procijenjenim preostalim vremenom."""
-        try:
-            current_time = time.time()
-            
-            # Inicijaliziraj početno vrijeme ako je potrebno
-            if self.start_time is None:
-                self.start_time = current_time
-            
-            # Osiguraj da je progress između 0 i 1
-            progress = float(progress)
-            if progress > 1:  # Ako je veći od 1, pretvori u decimalni zapis
-                progress = progress / 100.0
-            progress = max(0.0, min(1.0, progress))  # Ograniči između 0 i 1
-            
-            # Izračunaj proteklo vrijeme
-            elapsed = current_time - self.start_time
-            
-            # Ažuriraj postotak i status svakih 0.5 sekundi ili ako je promjena veća od 5%
-            if (self.last_update_time is None or 
-                (current_time - self.last_update_time) >= 0.5 or 
-                abs(progress - self.last_progress) > 0.05 or
-                progress >= 1.0):
-                
-                progress_percent = int(progress * 100)
-                self.progress_var.set(progress_percent)
-                self.percentage_var.set(f"{progress_percent}%")
-                self.last_update_time = current_time
-                
-                # Ako je u tijeku prevođenje, izračunaj procijenjeno vrijeme
-                if 0 < progress < 1:
-                    estimated_total = elapsed / progress if progress > 0 else 0
-                    remaining = max(0, estimated_total - elapsed)
-                    
-                    if is_batch and current_file is not None and total_files is not None:
-                        self.status_var.set(
-                            f"Prevođenje datoteke {current_file} od {total_files} • "
-                            f"{progress_percent}% • Preostalo: {self.format_time(remaining)}"
-                        )
-                    else:
-                        self.status_var.set(
-                            f"Prevođenje u tijeku • "
-                            f"{progress_percent}% • Preostalo: {self.format_time(remaining)}"
-                        )
-                elif progress == 0 and elapsed > 1:
-                    self.status_var.set(f"Priprema... (Proteklo: {self.format_time(elapsed)})")
-                elif progress >= 1:
-                    self.status_var.set("Prevođenje gotovo!")
-                
-                # Ažuriraj prozor da se odmah vidi promjena
-                self.root.update_idletasks()
-            
-            # Spremi trenutno stanje
-            self.last_progress = progress
-            
-        except Exception as e:
-            print(f"Greška pri ažuriranju statusa: {e}")
-            import traceback
-            traceback.print_exc()
-
-    def run_translation(self, input_file, output_file):
-        """Pokreće prevođenje jedne datoteke."""
-        try:
-            # Provjeri postoji li već prevedena datoteka
-            if os.path.exists(output_file):
-                base, ext = os.path.splitext(output_file)
-                if not ext.lower() == '.srt':
-                    output_file = f"{base}.srt"
-                
-                # Ako datoteka već postoji, prikaži upozorenje
-                result = messagebox.askyesno(
-                    "Datoteka već postoji",
-                    f"Izlazna datoteka već postoji:\n{output_file}\n\nŽelite li je zamijeniti?",
-                    parent=self.root
-                )
-                
-                if not result:
-                    self.root.after(0, self.reset_ui_after_translation)
-                    return
-            
-            # Inicijaliziraj vrijednosti za praćenje napretka
-            self.start_time = time.time()
-            self.last_progress = 0
-            self.progress_var.set(0)
-            self.percentage_var.set("0%")
-            self.progress.configure(mode='determinate')
-            
-            metadata_csv = self.metadata_csv_path.get().strip()
-            user_dict_path = self.user_dict_path.get().strip()
-            
-            # Definiraj callback funkciju za ažuriranje napretka
-            def update_progress_callback(progress):
-                # Koristimo after za sigurno ažuriranje GUI-a iz druge dretve
-                self.root.after(0, self.update_progress, progress, False)
-            
-            translator = ImprovedSubtitleTranslator(
-                metadata_csv=metadata_csv if metadata_csv else None,
-                user_dict_path=user_dict_path if user_dict_path else None,
-                progress_callback=update_progress_callback
-            )
-            translator._gem_enabled = self.gemini_enabled.get()
-            
-            # Pokreni prevođenje
-            result = translator.translate_file(input_file, output_file)
-            
-            # Ažuriraj GUI nakon završetka
-            if result:
-                self.root.after(0, self.on_translation_success)
-            else:
-                self.root.after(0, lambda: self.on_translation_error("Prevođenje nije uspjelo"))
-            
-        except Exception as e:
-            self.root.after(0, self.on_translation_error, str(e))
-            
-    def run_batch_translation(self):
-        """Pokreće batch prevođenje (više datoteka)."""
-        try:
-            self.start_time = None
-            self.last_progress = 0
-            
-            input_dir = self.input_path.get()
-            output_dir = self.output_path.get()
-            
-            if not os.path.exists(output_dir):
-                os.makedirs(output_dir)
-                
-            srt_files = [f for f in os.listdir(input_dir) if f.lower().endswith('.srt')]
-            total_files = len(srt_files)
-            if total_files == 0:
-                self.root.after(0, self.on_translation_error, "Nema .srt datoteka u mapi.")
-                return
-
-            self.progress.configure(mode='determinate', maximum=100)
-            
-            metadata_csv = self.metadata_csv_path.get().strip()
-            user_dict_path = self.user_dict_path.get().strip()
-            
-            translator = ImprovedSubtitleTranslator(
-                metadata_csv=metadata_csv if metadata_csv else None,
-                user_dict_path=user_dict_path if user_dict_path else None
-            )
-            translator._gem_enabled = self.gemini_enabled.get()
-            
-            success_count = 0
-            for i, srt_file in enumerate(srt_files):
-                input_file = os.path.join(input_dir, srt_file)
-                output_file = os.path.join(output_dir, f"{Path(srt_file).stem}_hr.srt")
-                
-                # Izračunaj napredak
-                progress = (i + 1) / total_files  # Vrijednost između 0 i 1
-                
-                # Ažuriraj GUI
-                self.root.after(0, lambda p=progress, i=i, t=total_files: self.update_progress(
-                    p, is_batch=True, current_file=i+1, total_files=t
-                ))
-                
-                try:
-                    translated = translator.translate_file(input_file, output_file)
-                    if translated:
-                        success_count += 1
-                except Exception as e:
-                    print(f"Greška pri prevođenju {srt_file}: {e}")
-            
-            self.root.after(0, lambda: self.on_translation_complete(success_count, total_files))
-            
-        except Exception as e:
-            self.root.after(0, self.on_translation_error, str(e))
-
     def toggle_advanced(self, show=None):
-        """Prikazuje ili skriva dodatne opcije."""
-        self.show_advanced = not self.show_advanced if show is None else show
+        """Prikazuje/skriva dodatne opcije.
         
+        Args:
+            show (bool, optional): Ako je navedeno, postavlja prikaz prema ovoj vrijednosti.
+                                 Ako nije navedeno, mijenja trenutno stanje.
+        """
+        if show is None:
+            self.show_advanced = not self.show_advanced
+        else:
+            self.show_advanced = show
+            
         if self.show_advanced:
-            self.advanced_frame.grid(row=4, column=0, columnspan=3, sticky='ew', pady=5, padx=5)
-            self.advanced_btn.config(text="▲ Sakrij opcije")
-            # Poveži tooltips za napredne opcije tek sada
-            adv_entries = self.advanced_frame.winfo_children()[0].winfo_children()
-            try:
-                ToolTip(adv_entries[1], self.tooltips['metadata_csv']) # Entry za CSV
-                ToolTip(adv_entries[4], self.tooltips['user_dict'])  # Entry za User Dict
-            except IndexError:
-                pass # Zaštita ako se raspored promijeni
+            self.advanced_frame.grid(row=4, column=0, columnspan=3, sticky='ew', pady=(0, 10))
+            self.advanced_btn.config(text="▲ Sakrij dodatne opcije")
         else:
             self.advanced_frame.grid_remove()
-            self.advanced_btn.config(text="▼ Dodatne opcije")
+            self.advanced_btn.config(text="▼ Prikaži dodatne opcije")
+    
+    def toggle_sync_mode(self):
+        """Uključuje/isključuje sinkronizacijski mod i ažurira UI."""
+        is_sync = self.sync_mode.get()
+        
+        # Ako uključujemo sinkronizaciju, isključimo batch mod
+        if is_sync:
+            self.batch_mode.set(False)
+            self.batch_cb.config(state=tk.DISABLED)
+            self.sync_frame.grid(row=4, column=0, columnspan=3, sticky='ew', pady=5)
+            self.advanced_btn.grid_forget()
+            self.advanced_frame.grid_forget()
+        else:
+            self.batch_cb.config(state=tk.NORMAL)
+            self.sync_frame.grid_forget()
+            self.advanced_btn.grid(row=3, column=0, columnspan=3, sticky=tk.W, pady=(5, 0))
+        
+        # Ažuriraj stanje ostalih kontrola
+        self.toggle_batch_mode()
     
     def toggle_batch_mode(self):
-        """Ažurira GUI labele za batch ili single mod."""
+        """Uključuje/isključuje batch mod."""
         is_batch = self.batch_mode.get()
-        btn_text_input = "Odaberi mapu..." if is_batch else "Odaberi datoteku..."
-        btn_text_output = "Odaberi mapu..." if is_batch else "Odaberi datoteku..."
+        is_sync = self.sync_mode.get()
         
-        self.input_btn.config(text=btn_text_input)
-        self.output_btn.config(text=btn_text_output)
+        # Ažuriraj tekst gumba samo ako nismo u sinkronizacijskom modu
+        if not is_sync:
+            self.input_btn.config(text="Odaberi mapu..." if is_batch else "Odaberi datoteku...")
+            self.output_btn.config(text="Odaberi izlaznu mapu..." if is_batch else "Odaberi izlaznu datoteku...")
         
         # Automatski predloži izlaz
         self.auto_suggest_output()

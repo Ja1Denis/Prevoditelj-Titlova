@@ -4,7 +4,23 @@ Sve važnije promjene u projektu bit će dokumentirane u ovoj datoteci.
 
 ## [Nadolazeće] - 2025-11-03
 
+### Dodano
+- **Funkcionalnost sinkronizacije titlova** - Dodana je nova funkcionalnost za sinkronizaciju titlova između dvije datoteke, gdje se uzimaju vremena iz jedne datoteke, a tekst iz druge.
+- **Automatsko prepoznavanje početka sadržaja** - Algoritam sada automatski prepoznaje početak stvarnog sadržaja, preskačući uvodne kredite i praznine.
+- **Uvodni krediti** - Dodani su uvodni krediti koji obavještavaju da su titlovi sinkronizirani pomoću aplikacije.
+
+### Poboljšano
+- **Algoritam za pronalaženje podudaranja** - Poboljšana je preciznost pronalaženja odgovarajućih titlova između dvije datoteke.
+- **Normalizacija teksta** - Dodana je bolja obrada teksta pri uspoređivanju, uključujući uklanjanje interpunkcije i normalizaciju razmaka.
+- **Korisničko sučelje** - Poboljšane su poruke o greškama i informacije o točnosti podudaranja.
+
 ### Popravljeno
+- **Ispravljeno ponašanje progress bara** - Popravljeno je ponašanje progress bara kako bi se ispravno zaustavljao nakon završetka sinkronizacije.
+- **Ispravljeno indeksiranje titlova** - Popravljeno je ažuriranje indeksa titlova nakon dodavanja uvodnih kredita.
+
+### Popravljeno
+- **Ispravljeno ponašanje progress bara** - Popravljeno je ponašanje progress bara kako bi se ispravno zaustavljao nakon završetka prevođenja, uključujući i slučajeve kada dođe do greške.
+
 - **Poboljšano praćenje napretka prevođenja** - Dodana je potpuna podrška za praćenje napretka tokom prevođenja, uključujući:
   - Realno ažuriranje postotka napretka u korisničkom sučelju
   - Prikaz preostalog vremena za završetak prevođenja
