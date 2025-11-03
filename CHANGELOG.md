@@ -6,6 +6,7 @@ Sve važnije promjene u projektu bit će dokumentirane u ovoj datoteci.
 
 ### Promijenjeno
 - Promijenjen model za prijevod s `Helsinki-NLP/opus-mt-en-zls` na `Helsinki-NLP/opus-mt-tc-base-en-sh` jer prethodni model nije bio zadovoljavajućeg kvalitete. Novi model pruža bolje rezultate u prijevodu s engleskog na hrvatski.
+- Dodan je eksplicitan prefiks `>>hrv<<` za svaki tekst prije prevođenja kako bi se osiguralo da model uvijek prevodi na hrvatski jezik, čime se sprječava mogućnost miješanja srodnih jezika (npr. srpski).
 
 ### Dodano
 - [ ] Dodati funkcionalnost za praćenje promjena u kodu

@@ -833,8 +833,10 @@ class ImprovedSubtitleTranslator:
             # Spremi originalni engleski tekst za prevođenje
             info['src_text'] = text
             translation_infos.append(info)
-            # Koristimo originalni tekst bez ikakvih modifikacija
-            texts_to_translate.append(text)
+            # Dodajemo prefiks >>hrv<< kako bismo eksplicitno odredili ciljani jezik
+            prefixed_text = f">>hrv<< {text}"
+            print(f"  Tekst s prefiksom: {prefixed_text}")
+            texts_to_translate.append(prefixed_text)
     
         try:
             inputs = self.tokenizer(texts_to_translate, 
